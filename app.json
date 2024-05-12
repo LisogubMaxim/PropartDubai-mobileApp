@@ -27,12 +27,7 @@
             [
                 "expo-font",
                 {
-                    "fonts": [
-                        "./assets/fonts/Nunito/Nunito-Bold.ttf",
-                        "./assets/fonts/Nunito/Nunito-Medium.ttf",
-                        "./assets/fonts/Nunito/Nunito-Regular.ttf",
-                        "./assets/fonts/OpenSans/OpenSans-SemiBold.ttf"
-                    ]
+                    "fonts": []
                 }
             ]
         ]
