@@ -10,26 +10,25 @@ const Goals = ({ onPress }) => {
         <View>
             <Text style={styles.title}>What goals do you pursue using our app?</Text>
             <Text style={styles.text}>I`d like to...</Text>
+            <View style={styles.button}>
+                <Button
+                    text={
+                        <Text style={{ color: "#0F1121", fontFamily: "Nunito_400Regular" }}>
+                            <Text style={{ color: "#333863", fontFamily: "Nunito_700Bold" }}>Buy </Text>
+                            real estate
+                        </Text>
+                    }
+                    borderColor="#B7B8BC"
+                    onPress={onPress}
+                />
+            </View>
             <Button
                 text={
-                    <Text>
-                        <Text style={{ color: "#333863", fontFamily: "Nunito-Bold" }}>Buy </Text>
+                    <Text style={{ color: "#0F1121", fontFamily: "Nunito_400Regular" }}>
+                        <Text style={{ color: "#333863", fontFamily: "Nunito_700Bold" }}>Sell </Text>
                         real estate
                     </Text>
                 }
-                color="#0F1121"
-                borderColor="#B7B8BC"
-                marginBottom={12}
-                onPress={onPress}
-            />
-            <Button
-                text={
-                    <Text>
-                        <Text style={{ color: "#333863", fontFamily: "Nunito-Bold" }}>Sell </Text>
-                        real estate
-                    </Text>
-                }
-                color="#0F1121"
                 borderColor="#B7B8BC"
                 onPress={onPress}
             />

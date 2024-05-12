@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+    container: {
+        gap: 12,
+    },
+
     title: {
         fontSize: 24,
         color: "#333863",
@@ -8,15 +12,17 @@ const styles = StyleSheet.create({
         marginBottom: 24,
     },
 
-    text: {
-        fontSize: 14,
-        fontFamily: "Nunito_400Regular",
-        color: "#0F1121",
-        marginBottom: 12,
+    row: {
+        gap: 12,
+        flexDirection: "row",
     },
 
-    button: {
-        marginBottom: 12,
+    doubleButton: {
+        width: "48.2%",
+    },
+
+    pass: {
+        flex: 1,
     },
 });
 

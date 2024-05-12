@@ -8,13 +8,6 @@ const styles = StyleSheet.create({
         marginBottom: 24,
     },
 
-    text: {
-        fontSize: 14,
-        fontFamily: "Nunito_400Regular",
-        color: "#0F1121",
-        marginBottom: 12,
-    },
-
     button: {
         marginBottom: 12,
     },
