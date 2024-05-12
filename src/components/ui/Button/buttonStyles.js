@@ -4,10 +4,15 @@ const styles = StyleSheet.create({
     button: {
         width: "100%",
         height: 56,
-        borderWidth: 1,
         borderRadius: 100,
         alignItems: "center",
         justifyContent: "center",
+    },
+
+    text: {
+        color: "#ffffff",
+        fontFamily: "Nunito_500Medium",
+        fontSize: 16,
     },
 });
 
