@@ -1,7 +1,7 @@
 import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    accountingSupport: {
+    powersOfAttorney: {
         paddingTop: 45,
         marginBottom: 21,
     },
@@ -26,35 +26,13 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
 
+    slider: {
+        marginBottom: 40,
+    },
+
     body: {
         marginLeft: 20,
         marginRight: 20,
-    },
-
-    accountingServices: {
-        marginBottom: 32,
-    },
-
-    title: {
-        color: "#000000",
-        fontFamily: "#Nunito_400Regular",
-        fontSize: 16,
-        marginBottom: 16,
-    },
-
-    titleInformationGetSupport: {
-        color: "#000000",
-        fontFamily: "#Nunito_400Regular",
-        fontSize: 16,
-        marginBottom: 24,
-    },
-
-    slider: {
-        marginBottom: 32,
-    },
-
-    informationGetSupport: {
-        paddingBottom: 14,
     },
 });
 
