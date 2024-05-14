@@ -5,15 +5,11 @@ import InformationPoints from "../../ui/InformationPoints/InformationPoints";
 import PointsChain from "../../ui/PointsChain/PointsChain";
 import GetConsultation from "../../ui/GetConsultation/GetConsultation";
 
+import { AccountingSupportData } from "../../../data/data";
+
 import styles from "./accountingSupportStyles";
 
 const AccountingSupport = () => {
-    const data = [
-        { title: "Customer billing and reminders", text: "Prompt invoices and payment reminders for our clients' buyers " },
-        { title: "Tax compliance advisory", text: "Consultations on timely tax registration and reporting." },
-        { title: "Customer billing and reminders", text: "Prompt invoices and payment reminders for our clients' buyers " },
-    ];
-
     const points = [
         "Accounting",
         "Managment",
@@ -43,7 +39,7 @@ const AccountingSupport = () => {
                     We provide comprehensive accounting, financial reporting, and tax compliance services to our clients
                 </Text>
                 <View style={styles.slider}>
-                    <Slider data={data} width={175} height={157} />
+                    <Slider data={AccountingSupportData} width={171} height={152} />
                 </View>
                 <View style={styles.body}>
                     <View style={styles.accountingServices}>
