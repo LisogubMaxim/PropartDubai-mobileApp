@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         borderColor: "#F1F1F1",
         borderWidth: 1,
-        justifyContent: "space-between",
+        gap: 16,
+        // justifyContent: "space-between",
         ...Platform.select({
             ios: {
                 shadowColor: "#0F1121",
@@ -37,12 +38,14 @@ const styles = StyleSheet.create({
         color: "#333863",
         fontFamily: "OpenSans_600SemiBold",
         fontSize: 16,
+        lineHeight: 17,
     },
 
     text: {
         color: "#6F707A",
         fontFamily: "Nunito_400Regular",
         fontSize: 14,
+        lineHeight: 18,
     },
 });
 
