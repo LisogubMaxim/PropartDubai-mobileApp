@@ -22,7 +22,7 @@ const OTP = ({ navigation }) => {
   });
 
   const inputHandler = (text) => {
-    if (text !== '1111') {
+    if (text === '1111') {
       setIsInvalidCode(true);
     } else {
       setIsInvalidCode(false);
@@ -56,7 +56,7 @@ const OTP = ({ navigation }) => {
               style={[
                 styles.cell,
                 isFocused && styles.focusCell,
-                isInvalidCode && styles.invalidCode,
+                value && !isInvalidCode && styles.invalidCode,
               ]}
               onLayout={getCellOnLayoutHandler(index)}>
               {value.length > index ? value[index] : '•'}
@@ -65,13 +65,15 @@ const OTP = ({ navigation }) => {
         />
       </SafeAreaView>
 
-      {isInvalidCode && <Text style={styles.invalidText}>Invalid code</Text>}
+      {value && !isInvalidCode && (
+        <Text style={styles.invalidText}>Invalid code</Text>
+      )}
 
       <View style={styles.confirm}>
         <Button
           text="Confirm"
-          backgroundColor={!isInvalidCode ? '#333863' : '#D6D7E0'}
-          disabled={isInvalidCode}
+          backgroundColor={isInvalidCode ? '#333863' : '#D6D7E0'}
+          disabled={!isInvalidCode}
           onPress={() => navigation.navigate('Registration')}
         />
         <Text style={styles.resend}>Resend code</Text>
