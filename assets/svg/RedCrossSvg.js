@@ -7,7 +7,7 @@ const CrossSvg = (props) => (
     height={16}
     fill="none"
     {...props}>
-    <Rect width={16} height={16} fill="#B7B8BC" rx={8} />
+    <Rect width={16} height={16} fill="#F14336" rx={8} />
     <Path
       stroke="#fff"
       strokeLinecap="round"
