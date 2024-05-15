@@ -62,3 +62,56 @@ export const PowersOfAttorneyData = [
         text: "We sertify a POA at the Conculate",
     },
 ];
+
+export const FreelanceVisaData = {
+    Requirements: ["Passport", "Photo", "Legalized diploma"],
+    Pros: [
+        { title: "Family sponsorship" },
+        { title: "Annuel UAE visit requirement" },
+        { title: "Opening local bank account" },
+        { title: "Purchase long-term mobile number" },
+    ],
+};
+
+export const EmployeeVisaData = {
+    Requirements: ["21+ years", "Photo ", "Employment", "UAE Ministry-certified diploma"],
+    Pros: [
+        { title: "Family sponsorship" },
+        { title: "Six-month UAE residency visit requirement" },
+        { title: "Opening local bank account" },
+        { title: "Opportunity to obtain a credit card" },
+        { title: "Opportunity to sign a rental agreement" },
+        { title: "Purchase long-term mobile number" },
+        { title: "Obtaining a local driver's license" },
+    ],
+};
+
+export const GoldenVisaData = {
+    Requirements: ["21+ years", "Property price 2M+ AED", "Min 30% construction completion requirement"],
+    Pros: [
+        { title: "Family sponsorship" },
+        { title: "Annuel UAE visit requirement" },
+        { title: "Opening local bank account" },
+        { title: "Tax Exemption" },
+        { title: "Obtaining a local driver's license" },
+        { title: "Purchase long-term mobile number" },
+    ],
+};
+
+export const InvestorVisaData = {
+    Requirements: ["21+ years", "Personal photo", "Passport", "Company registration or license"],
+
+    Pros: [
+        { title: "Family sponsorship" },
+        { title: "Annuel UAE visit requirement" },
+        { title: "Opening local bank account" },
+        { title: "Opportunity to obtain a credit card" },
+        { title: "Opportunity to establish a corporate bank accoun" },
+        { title: "Opportunity to sign a rental agreement" },
+        { title: "Purchase long-term mobile number" },
+    ],
+};
+
+export const RetirementVisaData = {
+    Requirements: ["55+ years", "15+  years of work experience", "1M+ AED of property", "Earnings of $ 5,000"],
+};
