@@ -6,6 +6,14 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginRight: 20,
         flex: 1,
+        zIndex: 0,
+    },
+
+    overlay: {
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
     },
 
     header: {
