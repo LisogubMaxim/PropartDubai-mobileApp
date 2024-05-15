@@ -10,25 +10,6 @@ import { AccountingSupportData } from "../../../data/data";
 import styles from "./accountingSupportStyles";
 
 const AccountingSupport = () => {
-    const points = [
-        "Accounting",
-        "Managment",
-        "Registration and reporting",
-        "Tax consultations",
-        "Beneficiary reporting",
-        "AML reporting",
-        "Economic Substance reporting",
-    ];
-
-    const pointsChain = [
-        "Request for services",
-        "Free consultation",
-        "Selecting a pricing plan",
-        "Selecting a pricing plan",
-        "Signing an agreement on confidential information and concluding an agreement",
-        "Launch of the service process and business support 24/7",
-    ];
-
     return (
         <ScrollView>
             <View style={styles.accountingSupport}>
@@ -39,16 +20,16 @@ const AccountingSupport = () => {
                     We provide comprehensive accounting, financial reporting, and tax compliance services to our clients
                 </Text>
                 <View style={styles.slider}>
-                    <Slider data={AccountingSupportData} width={171} height={152} />
+                    <Slider data={AccountingSupportData.slider} width={171} height={152} />
                 </View>
                 <View style={styles.body}>
                     <View style={styles.accountingServices}>
                         <Text style={styles.title}>Our accounting services</Text>
-                        <InformationPoints data={points} />
+                        <InformationPoints data={AccountingSupportData.points} />
                     </View>
                     <View style={styles.informationGetSupport}>
                         <Text style={styles.titleInformationGetSupport}>How to get accounting support</Text>
-                        <PointsChain data={pointsChain} />
+                        <PointsChain data={AccountingSupportData.pointsChain} />
                     </View>
 
                     <GetConsultation text="Contact us to arrange meeting with expert. We can help you with your accounting and reporting." />
