@@ -11,13 +11,14 @@ const InformationPanel = ({
     bottomText,
     bottomTextSize,
     backgroundColor = "#ffffff",
+    padding = 12,
 }) => {
     const textStyle = {
         color: backgroundColor === "#333863" ? "#ffffff" : "#333863",
     };
 
     return (
-        <View style={[styles.informationPanel, { backgroundColor: backgroundColor, borderColor: backgroundColor }]}>
+        <View style={[styles.informationPanel, { backgroundColor: backgroundColor, padding: padding }]}>
             <View style={styles.top}>
                 <View style={styles.titleContainer}>
                     <Text style={[styles.title, { color: titleColor ? titleColor : "#6F707A" }]}>{title}</Text>

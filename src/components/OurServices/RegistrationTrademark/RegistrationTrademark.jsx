@@ -7,12 +7,6 @@ import InformationPanel from "../../ui/InformationPanel/InformationPanel";
 import styles from "./registrationTrademarkStyles";
 
 const RegistrationTrademark = () => {
-    const data = [
-        { title: "Customer billing and reminders", text: "Prompt invoices and payment reminders for our clients' buyers " },
-        { title: "Tax compliance advisory", text: "Consultations on timely tax registration and reporting." },
-        { title: "Customer billing and reminders", text: "Prompt invoices and payment reminders for our clients' buyers " },
-    ];
-
     const points = [
         "TM Logo",
         "License",
@@ -23,15 +17,6 @@ const RegistrationTrademark = () => {
         "Emirates ID card",
         "Email",
         "Phone number",
-    ];
-
-    const pointsChain = [
-        "Request for services",
-        "Free consultation",
-        "Selecting a pricing plan",
-        "Selecting a pricing plan",
-        "Signing an agreement on confidential information and concluding an agreement",
-        "Launch of the service process and business support 24/7",
     ];
 
     return (
@@ -53,6 +38,7 @@ const RegistrationTrademark = () => {
                             topTextSize={32}
                             bottomText="working days"
                             bottomTextSize={14}
+                            padding={16}
                         />
                         <InformationPanel
                             title="2st stage"
@@ -62,6 +48,7 @@ const RegistrationTrademark = () => {
                             topTextSize={32}
                             bottomText="working days"
                             bottomTextSize={14}
+                            padding={16}
                         />
                         <InformationPanel
                             title="3st stage"
@@ -71,6 +58,7 @@ const RegistrationTrademark = () => {
                             topTextSize={32}
                             bottomText="working days"
                             bottomTextSize={14}
+                            padding={16}
                         />
                         <InformationPanel
                             title="Price"
@@ -80,6 +68,7 @@ const RegistrationTrademark = () => {
                             bottomText="13,000"
                             bottomTextSize={32}
                             backgroundColor="#333863"
+                            padding={16}
                         />
                     </View>
                     <View style={styles.documentsRequired}>
