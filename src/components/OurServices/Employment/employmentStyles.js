@@ -2,7 +2,7 @@ import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     employment: {
-        paddingTop: 45,
+        paddingTop: 24,
         marginBottom: 21,
     },
 
@@ -55,6 +55,13 @@ const styles = StyleSheet.create({
         fontFamily: "Nunito_400Regular",
         fontSize: 16,
         marginBottom: 16,
+    },
+
+    overlay: {
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
     },
 });
 

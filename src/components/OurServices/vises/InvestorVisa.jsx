@@ -55,7 +55,7 @@ const InvestorVisa = ({ handleClose }) => {
                     <InformationPoints data={InvestorVisaData.Requirements} />
                 </View>
             </View>
-            <View style={{ marginBottom: 32 }}>
+            <View>
                 <Text style={[styles.bodyTitle, { marginLeft: 20 }]}>Pros</Text>
                 <Slider data={InvestorVisaData.Pros} width={196} height={80} />
             </View>

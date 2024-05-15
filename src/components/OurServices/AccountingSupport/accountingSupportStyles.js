@@ -2,7 +2,7 @@ import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     accountingSupport: {
-        paddingTop: 45,
+        paddingTop: 24,
         marginBottom: 21,
     },
 

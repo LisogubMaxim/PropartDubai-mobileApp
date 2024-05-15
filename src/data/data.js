@@ -29,24 +29,45 @@ export const EmploymentData = [
     },
 ];
 
-export const AccountingSupportData = [
-    {
-        title: "Customer billing and reminders",
-        text: "Prompt invoices and payment reminders for our clients' buyers ",
-    },
-    {
-        title: "Tax compliance advisory",
-        text: "Consultations on timely tax registration and reporting.",
-    },
-    {
-        title: "Employee payroll services",
-        text: "Timely distribution of wages, payslips, and accrual explanations",
-    },
-    {
-        title: "Financial Reporting",
-        text: "Financial statements per legal and client-agreed schedules.",
-    },
-];
+export const AccountingSupportData = {
+    slider: [
+        {
+            title: "Customer billing and reminders",
+            text: "Prompt invoices and payment reminders for our clients' buyers ",
+        },
+        {
+            title: "Tax compliance advisory",
+            text: "Consultations on timely tax registration and reporting.",
+        },
+        {
+            title: "Employee payroll services",
+            text: "Timely distribution of wages, payslips, and accrual explanations",
+        },
+        {
+            title: "Financial Reporting",
+            text: "Financial statements per legal and client-agreed schedules.",
+        },
+    ],
+
+    points: [
+        "Accounting",
+        "Managment",
+        "Registration and reporting",
+        "Tax consultations",
+        "Beneficiary reporting",
+        "AML reporting",
+        "Economic Substance reporting",
+    ],
+
+    pointsChain: [
+        "Request for services",
+        "Free consultation",
+        "Selecting a pricing plan",
+        "Selecting a pricing plan",
+        "Signing an agreement on confidential information and concluding an agreement",
+        "Launch of the service process and business support 24/7",
+    ],
+};
 
 export const PowersOfAttorneyData = [
     {

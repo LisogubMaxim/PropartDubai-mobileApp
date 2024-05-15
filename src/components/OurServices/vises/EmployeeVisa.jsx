@@ -63,7 +63,7 @@ const EmployeeVisa = ({ handleClose }) => {
                     <InformationPoints data={EmployeeVisaData.Requirements} />
                 </View>
             </View>
-            <View style={{ marginBottom: 32 }}>
+            <View>
                 <Text style={[styles.bodyTitle, { marginLeft: 20 }]}>Pros</Text>
                 <Slider data={EmployeeVisaData.Pros} width={196} height={80} />
             </View>

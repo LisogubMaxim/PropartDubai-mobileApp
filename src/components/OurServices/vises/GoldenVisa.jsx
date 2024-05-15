@@ -53,7 +53,7 @@ const GoldenVisa = ({ handleClose }) => {
                     <InformationPoints data={GoldenVisaData.Requirements} />
                 </View>
             </View>
-            <View style={{ marginBottom: 32 }}>
+            <View>
                 <Text style={[styles.bodyTitle, { marginLeft: 20 }]}>Pros</Text>
                 <Slider data={GoldenVisaData.Pros} width={196} height={80} />
             </View>

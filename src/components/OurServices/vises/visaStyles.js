@@ -1,7 +1,9 @@
 import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    visa: {},
+    visa: {
+        marginBottom: 16,
+    },
 
     header: {
         paddingTop: 26,

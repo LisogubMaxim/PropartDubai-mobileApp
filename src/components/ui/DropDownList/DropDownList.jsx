@@ -5,7 +5,7 @@ import ArrowDownSvg from "../../../../assets/svg/ArrowDownSvg";
 
 import styles from "./dropDownListStyles";
 
-const DropDownList = ({ text, list }) => {
+const DropDownList = ({ text, list, onItemSelected }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleOpenList = () => {
@@ -27,7 +27,14 @@ const DropDownList = ({ text, list }) => {
             {isOpen && (
                 <View style={styles.container}>
                     {list.map((item, index) => (
-                        <TouchableOpacity key={index} style={styles.button}>
+                        <TouchableOpacity
+                            key={index}
+                            style={styles.button}
+                            onPress={() => {
+                                onItemSelected(item);
+                                setIsOpen(false);
+                            }}
+                        >
                             <Text style={styles.text}>{item}</Text>
                         </TouchableOpacity>
                     ))}
