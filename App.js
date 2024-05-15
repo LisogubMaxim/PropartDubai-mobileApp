@@ -10,6 +10,7 @@ import { OpenSans_600SemiBold } from '@expo-google-fonts/open-sans';
 
 import Registration from './src/components/Registration/Registration';
 import SignIn from './src/components/SignIn/SignInComponent/SignIn';
+import OTP from './src/components/OTP/OTP';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,7 +22,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <SignIn />
+      <OTP />
+      {/* <SignIn /> */}
       {/* <Registration /> */}
       <StatusBar style="auto" />
     </View>
