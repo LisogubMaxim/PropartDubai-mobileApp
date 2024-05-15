@@ -48,7 +48,7 @@ const RetirementVisa = ({ handleClose }) => {
                         <View style={{ flex: 1 }}></View>
                     </View>
                 </View>
-                <View style={{ marginBottom: 32 }}>
+                <View>
                     <Text style={styles.bodyTitle}>Requirements:</Text>
                     <InformationPoints data={RetirementVisaData.Requirements} />
                 </View>

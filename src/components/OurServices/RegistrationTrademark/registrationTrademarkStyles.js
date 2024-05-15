@@ -2,7 +2,7 @@ import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     registrationTrademark: {
-        paddingTop: 45,
+        paddingTop: 24,
     },
 
     header: {
@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
         fontFamily: "Nunito_400Regular",
         fontSize: 14,
         marginBottom: 16,
-        //sssssssssssssssssss
     },
 
     informationPanel: {
