@@ -2,9 +2,6 @@ import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     informationPanel: {
-        padding: 16,
-        borderWidth: 1,
-        borderColor: "#F1F1F1",
         borderRadius: 16,
         ...Platform.select({
             ios: {
@@ -49,9 +46,7 @@ const styles = StyleSheet.create({
     },
 
     bottom: {
-        flex: 1,
         alignItems: "flex-end",
-        // justifyContent: "flex-end",
     },
 
     bottomText: {
