@@ -12,7 +12,7 @@ import SignInGoogle from '../SignInButtons/SignInGoogle';
 import SignInFacebook from '../SignInButtons/SignInFacebook';
 import SignInApple from '../SignInButtons/SignInApple';
 
-const SignIn = () => {
+const SignIn = ({ navigation }) => {
   const [inputValue, setInputValue] = useState('');
   const [isButtonActive, setIsButtonActive] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -66,6 +66,7 @@ const SignIn = () => {
           text="Continue"
           backgroundColor={isButtonActive ? '#333863' : '#D6D7E0'}
           disabled={!isButtonActive}
+          onPress={() => navigation.navigate('Confirmation')}
         />
       </View>
       <View style={styles.divider}>

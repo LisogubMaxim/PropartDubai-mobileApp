@@ -12,7 +12,7 @@ import Button from '../ui/Button/Button';
 
 import styles from './otpStyle';
 
-const OTP = () => {
+const OTP = ({ navigation }) => {
   const [value, setValue] = useState('');
   const [isInvalidCode, setIsInvalidCode] = useState(false);
   const ref = useBlurOnFulfill({ value, cellCount: 4 });
@@ -71,7 +71,8 @@ const OTP = () => {
         <Button
           text="Confirm"
           backgroundColor={!isInvalidCode ? '#333863' : '#D6D7E0'}
-          disabled={!isInvalidCode}
+          disabled={isInvalidCode}
+          onPress={() => navigation.navigate('Registration')}
         />
         <Text style={styles.resend}>Resend code</Text>
       </View>
