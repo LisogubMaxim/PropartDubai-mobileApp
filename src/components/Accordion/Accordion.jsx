@@ -13,11 +13,7 @@ const Accordion = ({ title, subtitle, data }) => {
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
         <AccordionMenu data={data} />
-        <Text style={styles.text}>
-          Choosing between a Freezone and Mainland depends on various factors.
-          We can advice you the best variant.
-        </Text>
-        <GetConsultation />
+        <GetConsultation text="Choosing between a Freezone and Mainland depends on various factors. We can advice you the best variant." />
       </View>
     </ScrollView>
   );

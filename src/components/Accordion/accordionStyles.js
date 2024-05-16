@@ -19,12 +19,6 @@ const styles = StyleSheet.create({
     color: '#6f707a',
     marginBottom: 32,
   },
-  text: {
-    fontSize: 14,
-    lineHeight: 18,
-    color: '#0f1121',
-    marginTop: 20,
-  },
   accordion: {
     paddingVertical: 12,
     paddingHorizontal: 16,
