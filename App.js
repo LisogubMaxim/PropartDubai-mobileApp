@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import {
@@ -13,7 +14,6 @@ import { OpenSans_600SemiBold } from '@expo-google-fonts/open-sans';
 import Registration from './src/components/Registration/Registration';
 import SignIn from './src/components/SignIn/SignInComponent/SignIn';
 import OTP from './src/components/OTP/OTP';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
