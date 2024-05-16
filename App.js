@@ -15,6 +15,8 @@ import Registration from './src/components/Registration/Registration';
 import SignIn from './src/components/SignIn/SignInComponent/SignIn';
 import OTP from './src/components/OTP/OTP';
 
+import Freezone from './src/components/Freezone';
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -27,7 +29,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <NavigationContainer>
+      <Freezone />
+      {/* <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
             name="SignIn"
@@ -45,7 +48,7 @@ export default function App() {
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
-      </NavigationContainer>
+      </NavigationContainer> */}
       <StatusBar style="auto" />
     </View>
   );
