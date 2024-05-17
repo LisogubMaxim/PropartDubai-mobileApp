@@ -6,6 +6,10 @@ import CloseCrossSvg from "../../../assets/svg/CloseCrossSvg";
 import DropDownList from "../ui/DropDownList/DropDownList";
 import ModalWithCross from "../ui/ModalWithCross/ModalWithCross";
 
+import Freezone from "../Freezone";
+import Mainland from "../Mainland";
+import Comparison from "../Comparison/Comparison";
+
 import FreelanceVisa from "./vises/FreelanceVisa";
 import EmployeeVisa from "./vises/EmployeeVisa";
 import GoldenVisa from "./vises/GoldenVisa";
@@ -34,6 +38,22 @@ const OurServices = () => {
         setModalVisible(true);
     };
 
+    const handleCallModalWindow = (component) => {
+        setSelectedService(component);
+        refScrollable.current.open();
+    };
+
+    const handleSelectCompanyRegistration = (selectedCompanyRegistration) => {
+        switch (selectedCompanyRegistration) {
+            case "Freezone":
+                return handleCallModalWindow(<Freezone />);
+            case "Mainland":
+                return handleCallModalWindow(<Mainland />);
+            case "Comparison":
+                return handleCallModalWindow(<Comparison />);
+        }
+    };
+
     const renderSelectedVisa = (selectedVisa) => {
         switch (selectedVisa) {
             case "Freelance visa":
@@ -60,14 +80,13 @@ const OurServices = () => {
                 </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={styles.menu}>
-                        {/* <DropDownList text="Company registration" list={company} onItemSelected={handleSelectService}/> */}
+                        <DropDownList text="Company registration" list={company} onItemSelected={handleSelectCompanyRegistration} />
                         <DropDownList text="Visa processing" list={visa} onItemSelected={handleSelectService} />
 
                         <TouchableOpacity
                             style={styles.button}
                             onPress={() => {
-                                setSelectedService(<AccountingSupport />);
-                                refScrollable.current.open();
+                                handleCallModalWindow(<AccountingSupport />);
                             }}
                         >
                             <Text style={styles.text}>Accounting support</Text>
@@ -75,8 +94,7 @@ const OurServices = () => {
                         <TouchableOpacity
                             style={styles.button}
                             onPress={() => {
-                                setSelectedService(<Employment />);
-                                refScrollable.current.open();
+                                handleCallModalWindow(<Employment />);
                             }}
                         >
                             <Text style={styles.text}>Employment</Text>
@@ -84,8 +102,7 @@ const OurServices = () => {
                         <TouchableOpacity
                             style={styles.button}
                             onPress={() => {
-                                setSelectedService(<RegistrationTrademark />);
-                                refScrollable.current.open();
+                                handleCallModalWindow(<RegistrationTrademark />);
                             }}
                         >
                             <Text style={styles.text}>TM Registration</Text>
@@ -93,8 +110,7 @@ const OurServices = () => {
                         <TouchableOpacity
                             style={styles.button}
                             onPress={() => {
-                                setSelectedService(<PowersOfAttorney />);
-                                refScrollable.current.open();
+                                handleCallModalWindow(<PowersOfAttorney />);
                             }}
                         >
                             <Text style={styles.text}>Registration of powers of attorney</Text>
