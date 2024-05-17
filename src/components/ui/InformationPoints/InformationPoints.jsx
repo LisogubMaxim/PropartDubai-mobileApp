@@ -6,10 +6,8 @@ const InformationPoints = ({ data }) => {
     return (
         <View style={styles.points}>
             {data.map((item, index) => (
-                <View style={styles.point}>
-                    <Text key={index} style={styles.text}>
-                        {item}
-                    </Text>
+                <View key={index} style={styles.point}>
+                    <Text style={styles.text}>{item}</Text>
                 </View>
             ))}
         </View>
