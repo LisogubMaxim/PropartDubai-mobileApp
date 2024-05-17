@@ -14,8 +14,7 @@ import { OpenSans_600SemiBold } from '@expo-google-fonts/open-sans';
 import Registration from './src/components/Registration/Registration';
 import SignIn from './src/components/SignIn/SignInComponent/SignIn';
 import OTP from './src/components/OTP/OTP';
-
-import Freezone from './src/components/Freezone';
+import Main from './src/components/Main/Main';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,7 +28,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Freezone />
+      <Main />
       {/* <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
