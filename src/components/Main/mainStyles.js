@@ -1,8 +1,9 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
+    paddingBottom: 20,
     flex: 1,
   },
   title: {
@@ -24,39 +25,25 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
 
-  //   text: {
-  //     fontSize: 14,
-  //     fontFamily: 'Nunito_400Regular',
-  //     color: '#0F1121',
-  //     marginBottom: 40,
-  //   },
-  //   continue: {
-  //     marginTop: 24,
-  //   },
-  //   incorrect: {
-  //     textAlign: 'center',
-  //     color: '#F14336',
-  //     marginTop: 8,
-  //   },
-  //   divider: {
-  //     flexDirection: 'row',
-  //     marginTop: 24,
-  //     marginBottom: 24,
-  //     alignItems: 'center',
-  //   },
-  //   line: {
-  //     flex: 1,
-  //     height: 1,
-  //     backgroundColor: '#b7b8bc',
-  //     marginHorizontal: 8,
-  //     marginTop: 8,
-  //   },
-  //   or: {
-  //     color: '#6f707a',
-  //   },
-  //   btns: {
-  //     gap: 12,
-  //   },
+  sliderContainer: {
+    flexDirection: 'row',
+    gap: 12,
+    marginBottom: 40,
+  },
+
+  areasContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 12,
+    marginBottom: 40,
+  },
+  getHelp: {
+    fontSize: 16,
+    color: '#0F1121',
+    fontFamily: 'OpenSans_600SemiBold',
+    marginTop: 48,
+    marginBottom: 16,
+  },
 });
 
 export default styles;
