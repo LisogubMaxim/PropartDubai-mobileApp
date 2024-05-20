@@ -23,7 +23,7 @@ const WhyChooseDubaiSlider = () => {
       scrollIndicatorInsets={{ right: 100 }}>
       <View style={styles.sliderContainer}>
         {data.map((item, idx) => (
-          <View style={styles.card}>
+          <View style={styles.card} key={idx}>
             <Image source={item.img} />
             <Text style={styles.text}>{item.text}</Text>
           </View>

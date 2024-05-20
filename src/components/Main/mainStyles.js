@@ -2,8 +2,8 @@ import { StyleSheet, Platform } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
+    position: 'relative',
     paddingHorizontal: 20,
-    paddingBottom: 20,
     flex: 1,
   },
   title: {

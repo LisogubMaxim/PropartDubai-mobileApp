@@ -18,10 +18,7 @@ services = [
 
 const OurServicesSlider = () => {
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={true}
-      scrollIndicatorInsets={{ right: 100 }}>
+    <ScrollView horizontal showsHorizontalScrollIndicator={true}>
       <View style={styles.sliderContainer}>
         {services.map((service, idx) => (
           <View style={styles.card} key={idx}>

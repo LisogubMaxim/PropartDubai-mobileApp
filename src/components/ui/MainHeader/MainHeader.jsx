@@ -6,7 +6,7 @@ import BurgerBtnSvg from '../../../../assets/svg/BurgerBtnSvg';
 
 import styles from './mainHeaderStyles';
 
-const MainHeader = () => {
+const MainHeader = ({ onClick }) => {
   return (
     <View style={styles.container}>
       <View
@@ -19,7 +19,7 @@ const MainHeader = () => {
           Real estate agency in Dubai with 15 years of experience
         </Text>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onClick}>
         <BurgerBtnSvg />
       </TouchableOpacity>
     </View>
