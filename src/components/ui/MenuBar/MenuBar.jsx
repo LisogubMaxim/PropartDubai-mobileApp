@@ -11,7 +11,6 @@ import styles from "./menuBarStyles";
 
 const MenuBar = () => {
     return (
-        // <View style={styles.container}>
         <View style={styles.menuBar}>
             <MenuBarSvg />
             <View style={styles.search}>
@@ -30,7 +29,6 @@ const MenuBar = () => {
                 </View>
             </View>
         </View>
-        // </View>
     );
 };
 

@@ -76,7 +76,12 @@ const PersonalInformation = ({ onPress }) => {
                     clearInput={() => handleClearInputs("email")}
                 />
             </View>
-            <Button text="Save" backgroundColor={isButtonActive ? "#333863" : "#D6D7E0"} onPress={onPress} />
+            <Button
+                text="Save"
+                backgroundColor={isButtonActive ? "#333863" : "#D6D7E0"}
+                disabled={isButtonActive ? false : true}
+                onPress={onPress}
+            />
         </View>
     );
 };

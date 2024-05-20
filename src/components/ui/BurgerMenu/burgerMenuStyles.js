@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     overlay: {
@@ -40,10 +40,21 @@ const styles = StyleSheet.create({
         width: 44,
         height: 44,
         borderRadius: 100,
-        elevation: 4,
         backgroundColor: "#ffffff",
         alignItems: "center",
         justifyContent: "center",
+        ...Platform.select({
+            ios: {
+                shadowColor: "#0F1121",
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.06,
+                shadowRadius: 30,
+            },
+            android: {
+                elevation: 3,
+                shadowColor: "#0F1121",
+            },
+        }),
     },
 });
 

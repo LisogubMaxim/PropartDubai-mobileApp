@@ -10,7 +10,7 @@ import FilterPoints from "../ui/FilterPoints/FilterPoints";
 
 import CloseCrossSvg from "../../../assets/svg/CloseCrossSvg";
 
-import specialData from "../../data/special";
+import specialData from "../../data/specialData";
 
 import styles from "./specialStyles";
 
