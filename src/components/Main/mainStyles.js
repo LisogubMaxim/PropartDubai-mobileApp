@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
   container: {
     position: 'relative',
     paddingHorizontal: 20,
+    backgroundColor: '#fff',
     flex: 1,
   },
   title: {

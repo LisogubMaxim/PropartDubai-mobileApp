@@ -7,11 +7,12 @@ import GetConsultation from '../../ui/GetConsultation/GetConsultation';
 import SearchInput from '../../ui/SearchInput/SearchInput';
 import FiltersBtn from '../../ui/FiltersBtn/FiltersBtn';
 import MainHeader from '../../ui/MainHeader/MainHeader';
+import PropertyCard from '../../ui/PropertyCard/PropertyCard';
+import Point from '../../ui/FilterPoints/Point/Point';
 
 import { propertiesData } from '../../../data/developers/developersData';
 
 import styles from './developerPropStyles';
-import PropertyCard from '../../ui/PropertyCard/PropertyCard';
 
 const DeveloperProperties = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -24,7 +25,8 @@ const DeveloperProperties = () => {
             <SearchInput placeholder="Search property, area..." />
             <FiltersBtn />
           </View>
-          <View style={{ gap: 12 }}>
+          <Point text={'Emaar'} />
+          <View style={{ gap: 12, marginTop: 24, alignItems: 'center' }}>
             {propertiesData.map((property, idx) => (
               <PropertyCard
                 width={350}

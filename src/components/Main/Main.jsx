@@ -66,27 +66,29 @@ const Main = () => {
               <Text style={styles.more}>More</Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.areasContainer}>
-            <PropertyCard
-              width={169}
-              height={368}
-              image={businessBay}
-              title={'Business Bay'}
-              amount={'977,355'}
-              isButton={false}
-            />
-            <View style={{ gap: 12 }}>
-              {areasData.map((property, idx) => (
-                <PropertyCard
-                  width={169}
-                  height={178}
-                  key={idx}
-                  image={property.image}
-                  title={property.title}
-                  amount={property.amount}
-                  isButton={false}
-                />
-              ))}
+          <View style={{ alignItems: 'center' }}>
+            <View style={styles.areasContainer}>
+              <PropertyCard
+                width={169}
+                height={368}
+                image={businessBay}
+                title={'Business Bay'}
+                amount={'977,355'}
+                isButton={false}
+              />
+              <View style={{ gap: 12 }}>
+                {areasData.map((property, idx) => (
+                  <PropertyCard
+                    width={169}
+                    height={178}
+                    key={idx}
+                    image={property.image}
+                    title={property.title}
+                    amount={property.amount}
+                    isButton={false}
+                  />
+                ))}
+              </View>
             </View>
           </View>
           <View style={styles.block}>

@@ -14,11 +14,10 @@ import { OpenSans_600SemiBold } from '@expo-google-fonts/open-sans';
 import Registration from './src/components/Registration/Registration';
 import SignIn from './src/components/SignIn/SignInComponent/SignIn';
 import OTP from './src/components/OTP/OTP';
-
 import Main from './src/components/Main/Main';
-import OurServices from './src/components/OurServices/OurServices';
-import ExploreDevelopers from './src/components/Developers/ExploreDevs/ExploreDevelopers';
+
 import DeveloperProperties from './src/components/Developers/DevProperties/DeveloperProperties';
+import Special from './src/components/Special/Special';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,10 +31,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <DeveloperProperties />
-      {/* <ExploreDevelopers /> */}
-      {/* <OurServices /> */}
-      {/* <Main /> */}
+      {/* <Special /> */}
+      {/* <DeveloperProperties /> */}
+      <Main />
       {/* <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
@@ -53,6 +51,11 @@ export default function App() {
             component={Registration}
             options={{ headerShown: false }}
           />
+          <Stack.Screen
+            name="Main"
+            component={Main}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer> */}
       <StatusBar style="auto" />
@@ -63,7 +66,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "#fff",
+    // backgroundColor: '#fff',
     // alignItems: "center",
     // justifyContent: "center",
   },
