@@ -11,14 +11,14 @@ import NumberOfRooms from "./pages/NumberOfRooms/NumberOfRooms";
 
 import styles from "./registrationStyles";
 
-const Registration = () => {
+const Registration = ({ navigation }) => {
     const [questionNumber, setQuestionNumber] = useState(1);
 
     const handleNextClick = () => {
         if (questionNumber < 5) {
             setQuestionNumber(questionNumber + 1);
         } else {
-            // navigate("/");
+            navigation.navigate("Main");
         }
     };
 
@@ -31,7 +31,9 @@ const Registration = () => {
             {questionNumber === 4 && <Price />}
             {questionNumber === 5 && <NumberOfRooms />}
 
-            {questionNumber > 2 && <Navigation handleNextClick={handleNextClick} handleSkipClick={() => console.log("skip")} />}
+            {questionNumber > 2 && (
+                <Navigation handleNextClick={handleNextClick} handleSkipClick={() => navigation.navigate("Main")} />
+            )}
         </View>
     );
 };
