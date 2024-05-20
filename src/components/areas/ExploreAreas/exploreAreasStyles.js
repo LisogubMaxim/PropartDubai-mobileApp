@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         color: "#333863",
     },
 
-    cross: {
+    button: {
         width: 44,
         height: 44,
         backgroundColor: "#ffffff",
