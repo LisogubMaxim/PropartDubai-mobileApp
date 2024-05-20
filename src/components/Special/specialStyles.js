@@ -1,48 +1,38 @@
 import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    overlay: {
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        zIndex: 99,
-    },
-
-    menu: {
-        position: "absolute",
-        top: 0,
-        right: 0,
-        bottom: 0,
-        width: "70%",
-        backgroundColor: "#fff",
-        padding: 20,
-        elevation: 4,
-        zIndex: 100,
+    container: {
+        flex: 1,
     },
 
     header: {
-        marginTop: 60,
+        paddingTop: 60,
+        paddingBottom: 8,
         marginBottom: 16,
-        width: "100%",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
     },
 
     title: {
+        justifyContent: "space-between",
+        flexDirection: "row",
+        marginBottom: 16,
+        paddingHorizontal: 20,
+    },
+
+    textTitle: {
         fontFamily: "OpenSans_600SemiBold",
         fontSize: 24,
         color: "#333863",
     },
 
-    close: {
+    cross: {
         width: 44,
         height: 44,
-        borderRadius: 100,
         backgroundColor: "#ffffff",
         alignItems: "center",
         justifyContent: "center",
+        borderRadius: 100,
+        borderWidth: 1,
+        borderColor: "#F1F1F1",
         ...Platform.select({
             ios: {
                 shadowColor: "#0F1121",
@@ -55,6 +45,33 @@ const styles = StyleSheet.create({
                 shadowColor: "#0F1121",
             },
         }),
+    },
+
+    search: {
+        flexDirection: "row",
+        gap: 8,
+        marginBottom: 8,
+        paddingHorizontal: 20,
+    },
+
+    body: {
+        marginHorizontal: 20,
+    },
+
+    propos: {
+        marginBottom: 48,
+        gap: 12,
+    },
+
+    text: {
+        fontFamily: "OpenSans_600SemiBold",
+        fontSize: 16,
+        color: "#0F1121",
+        marginBottom: 16,
+    },
+
+    help: {
+        marginBottom: 154,
     },
 });
 
