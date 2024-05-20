@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 40,
         borderColor: "#F1F1F1",
+        alignSelf: "flex-start",
     },
 });
 
