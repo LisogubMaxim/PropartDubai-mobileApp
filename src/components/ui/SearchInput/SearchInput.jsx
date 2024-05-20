@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, View, TextInput, Image } from 'react-native';
+import { View, TextInput } from 'react-native';
 
-import searchIcon from '../../../../assets/images/search-icon.png';
+import SearchSvg from '../../../../assets/svg/SearchSvg';
 
 import styles from './searchInputStyles';
 
@@ -15,7 +15,7 @@ const SearchInput = ({
 }) => {
   return (
     <View style={styles.SearchInput}>
-      <Image source={searchIcon} style={styles.searchIcon} />
+      <SearchSvg style={styles.searchIcon} />
       <TextInput
         style={styles.input}
         placeholder={placeholder}

@@ -16,6 +16,8 @@ import SignIn from './src/components/SignIn/SignInComponent/SignIn';
 import OTP from './src/components/OTP/OTP';
 
 import Main from './src/components/Main/Main';
+import OurServices from './src/components/OurServices/OurServices';
+import ExploreDevelopers from './src/components/Developers/ExploreDevs/ExploreDevelopers';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,7 +31,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Main />
+      <ExploreDevelopers />
+      {/* <OurServices /> */}
+      {/* <Main /> */}
       {/* <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
