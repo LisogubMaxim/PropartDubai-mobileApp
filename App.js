@@ -17,7 +17,10 @@ import OTP from './src/components/OTP/OTP';
 import Main from './src/components/Main/Main';
 
 import DeveloperProperties from './src/components/Developers/DevProperties/DeveloperProperties';
+import ExploreDevelopers from './src/components/Developers/ExploreDevs/ExploreDevelopers';
 import Special from './src/components/Special/Special';
+import AboutDeveloper from './src/components/Developers/AboutDev/AboutDeveloper';
+import OurServices from './src/components/OurServices/OurServices';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,9 +34,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {/* <Special /> */}
+      <OurServices />
+      {/* <AboutDeveloper /> */}
+      {/* <ExploreDevelopers /> */}
       {/* <DeveloperProperties /> */}
-      <Main />
+      {/* <Main /> */}
       {/* <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen

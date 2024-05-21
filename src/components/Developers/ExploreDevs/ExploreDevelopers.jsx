@@ -35,9 +35,7 @@ const ExploreDevelopers = () => {
               flexWrap: 'wrap',
             }}>
             {developers.map((item, idx) => (
-              <View>
-                <Image source={item.logo} key={idx} style={styles.logo} />
-              </View>
+              <Image source={item.logo} key={idx} style={styles.logo} />
             ))}
           </View>
           <Text style={styles.getHelp}>Get help from our expert</Text>
