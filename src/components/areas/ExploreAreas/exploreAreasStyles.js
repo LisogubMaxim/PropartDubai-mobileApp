@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
 
     header: {
         paddingTop: 60,
-        paddingBottom: 8,
     },
 
     title: {
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
         color: "#333863",
     },
 
-    cross: {
+    button: {
         width: 44,
         height: 44,
         backgroundColor: "#ffffff",
@@ -55,7 +54,6 @@ const styles = StyleSheet.create({
 
     body: {
         marginHorizontal: 20,
-        paddingTop: 16,
     },
 
     propos: {
