@@ -6,37 +6,20 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: '#fff',
     flex: 1,
+    height: '100%',
   },
   title: {
     fontSize: 16,
     color: '#0F1121',
     fontFamily: 'OpenSans_600SemiBold',
   },
-  more: {
-    fontSize: 14,
-    color: '#333863',
-    fontFamily: 'OpenSans_600SemiBold',
-    textDecorationLine: 'underline',
-  },
+
   block: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 16,
-  },
-
-  sliderContainer: {
-    flexDirection: 'row',
-    gap: 12,
-    marginBottom: 40,
-  },
-
-  areasContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    gap: 12,
-    marginBottom: 40,
   },
   getHelp: {
     fontSize: 16,

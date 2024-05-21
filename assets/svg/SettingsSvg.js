@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Svg, { Rect, Path } from 'react-native-svg';
-const CrossSvg = (props) => (
+import Svg, { Path } from 'react-native-svg';
+const SettingsSvg = (props) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
     width={20}
@@ -15,4 +15,4 @@ const CrossSvg = (props) => (
     />
   </Svg>
 );
-export default CrossSvg;
+export default SettingsSvg;

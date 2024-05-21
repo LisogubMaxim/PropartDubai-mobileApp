@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   input: {
-    width: 294,
+    minWidth: 294,
     height: 48,
     paddingLeft: 48,
     paddingRight: 16,

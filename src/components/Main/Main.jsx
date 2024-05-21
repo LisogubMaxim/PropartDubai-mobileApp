@@ -10,6 +10,9 @@ import WhyChooseDubaiSlider from './whyChooseDubaiSlider/WhyChooseDubaiSlider';
 import OurServicesSlider from './OurServicesSlider/OurServicesSlider';
 import MenuBar from '../ui/MenuBar/MenuBar';
 import BurgerMenu from '../ui/BurgerMenu/BurgerMenu';
+import ExploreDevelopers from '../Developers/ExploreDevs/ExploreDevelopers';
+import ExploreAreas from '../areas/ExploreAreas/ExploreAreas';
+import Special from '../Special/Special';
 
 import businessBay from '../../../assets/images/property/businessBay.jpg';
 
@@ -20,24 +23,38 @@ import {
 } from '../../data/mainScreenData/mainScreenData';
 
 import styles from './mainStyles';
+import BottomSheetModal from '../ui/BottomSheetModal/BottomSheetModal';
 
 const Main = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalComponent, setModalComponent] = useState(null);
+
+  const callModal = (component) => {
+    setModalComponent(component);
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
   return (
     <>
       <View style={styles.container}>
         <MainHeader onClick={() => setOpenMenu((prev) => !prev)} />
+        <View style={styles.block}>
+          <SearchInput placeholder="Search property, area..." />
+          <FiltersBtn />
+        </View>
         <ScrollView>
           <View style={styles.block}>
-            <SearchInput placeholder="Search property, area..." />
-            <FiltersBtn />
-          </View>
-          <View style={styles.block}>
             <Text style={styles.title}>Special for you</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => callModal(<Special onCloseModal={closeModal} />)}>
               <Text style={styles.more}>More</Text>
             </TouchableOpacity>
           </View>
+
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -63,35 +80,46 @@ const Main = () => {
           <View style={styles.block}>
             <Text style={styles.title}>Explore areas</Text>
             <TouchableOpacity>
-              <Text style={styles.more}>More</Text>
+              <Text
+                style={styles.more}
+                onPress={() =>
+                  callModal(<ExploreAreas onCloseModal={closeModal} />)
+                }>
+                More
+              </Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.areasContainer}>
-            <PropertyCard
-              width={169}
-              height={368}
-              image={businessBay}
-              title={'Business Bay'}
-              amount={'977,355'}
-              isButton={false}
-            />
-            <View style={{ gap: 12 }}>
-              {areasData.map((property, idx) => (
-                <PropertyCard
-                  width={169}
-                  height={178}
-                  key={idx}
-                  image={property.image}
-                  title={property.title}
-                  amount={property.amount}
-                  isButton={false}
-                />
-              ))}
+          <View style={{ alignItems: 'center' }}>
+            <View style={styles.areasContainer}>
+              <PropertyCard
+                width={169}
+                height={368}
+                image={businessBay}
+                title={'Business Bay'}
+                amount={'977,355'}
+                isButton={false}
+              />
+              <View style={{ gap: 12 }}>
+                {areasData.map((property, idx) => (
+                  <PropertyCard
+                    width={169}
+                    height={178}
+                    key={idx}
+                    image={property.image}
+                    title={property.title}
+                    amount={property.amount}
+                    isButton={false}
+                  />
+                ))}
+              </View>
             </View>
           </View>
           <View style={styles.block}>
             <Text style={styles.title}>Explore developers</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                callModal(<ExploreDevelopers onCloseModal={closeModal} />)
+              }>
               <Text style={styles.more}>More</Text>
             </TouchableOpacity>
           </View>
@@ -116,6 +144,9 @@ const Main = () => {
       </View>
       <MenuBar />
       <BurgerMenu isMenuOpen={openMenu} closeMenu={() => setOpenMenu(false)} />
+      <BottomSheetModal visible={modalVisible}>
+        {modalComponent}
+      </BottomSheetModal>
     </>
   );
 };

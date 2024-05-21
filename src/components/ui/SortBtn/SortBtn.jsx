@@ -1,18 +1,18 @@
 import React from 'react';
 import { Image, TouchableOpacity, View } from 'react-native';
 
-import SettingsSvg from '../../../../assets/svg/SettingsSvg';
+import SortSvg from '../../../../assets/svg/SortSvg';
 
-import styles from './filtersBtnStyles';
+import styles from './sortBtnStyles';
 
-const FiltersBtn = () => {
+const SortBtn = () => {
   return (
     <TouchableOpacity>
       <View style={styles.button}>
-        <SettingsSvg />
+        <SortSvg />
       </View>
     </TouchableOpacity>
   );
 };
 
-export default FiltersBtn;
+export default SortBtn;
