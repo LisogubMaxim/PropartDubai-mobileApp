@@ -38,8 +38,8 @@ export default function App() {
       {/* <AboutDeveloper /> */}
       {/* <ExploreDevelopers /> */}
       {/* <DeveloperProperties /> */}
-      <Main />
-      {/* <NavigationContainer>
+      {/* <Main /> */}
+      <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
             name="SignIn"
@@ -62,7 +62,7 @@ export default function App() {
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
-      </NavigationContainer> */}
+      </NavigationContainer>
       <StatusBar style="auto" />
     </View>
   );

@@ -31,7 +31,7 @@ const Special = ({ onCloseModal }) => {
       <View style={styles.header}>
         <View style={styles.title}>
           <Text style={styles.textTitle}>Special for you</Text>
-          <TouchableOpacity style={styles.cross}>
+          <TouchableOpacity style={styles.cross} onPress={onCloseModal}>
             <CloseCrossSvg />
           </TouchableOpacity>
         </View>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ScrollView, View, Text, TouchableOpacity, Image } from 'react-native';
 
 import MenuBar from '../../ui/MenuBar/MenuBar';
@@ -11,8 +11,11 @@ import CloseCrossSvg from '../../../../assets/svg/CloseCrossSvg';
 import { developers } from '../../../data/developers/developersData';
 
 import styles from './exploreDevelopersStyles';
+import RightSheetModal from '../../ui/RightSheetModal/RightSheetModal';
+import AboutDeveloper from '../AboutDev/AboutDeveloper';
 
 const ExploreDevelopers = ({ onCloseModal }) => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
   return (
     <>
       <View style={styles.container}>
@@ -35,7 +38,11 @@ const ExploreDevelopers = ({ onCloseModal }) => {
               flexWrap: 'wrap',
             }}>
             {developers.map((item, idx) => (
-              <Image source={item.logo} key={idx} style={styles.logo} />
+              <TouchableOpacity
+                key={idx}
+                onPress={() => setIsModalVisible(true)}>
+                <Image source={item.logo} style={styles.logo} />
+              </TouchableOpacity>
             ))}
           </View>
           <Text style={styles.getHelp}>Get help from our expert</Text>
@@ -44,6 +51,9 @@ const ExploreDevelopers = ({ onCloseModal }) => {
         </ScrollView>
       </View>
       <MenuBar />
+      <RightSheetModal visible={isModalVisible}>
+        <AboutDeveloper onCloseModal={() => setIsModalVisible(false)} />
+      </RightSheetModal>
     </>
   );
 };

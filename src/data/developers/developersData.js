@@ -43,3 +43,14 @@ export const propertiesData = [
     image: forte,
   },
 ];
+
+export const categoryData = [
+  {
+    category: 'Market experience',
+    text: 'Since its global expansion in 2004, Emaar Properties has grown to encompass over 60 subsidiaries and operates in more than 36 markets worldwide.',
+  },
+  {
+    category: 'Company`s goal',
+    text: 'Since its global expansion in 2004, Emaar Properties has grown to encompass over 60 subsidiaries and operates in more than 36 markets worldwide. Since its global expansion in 2004, Emaar Properties has grown to encompass over 60 subsidiaries and operates in more than 36 markets worldwide. ',
+  },
+];

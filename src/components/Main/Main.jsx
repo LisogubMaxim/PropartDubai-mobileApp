@@ -10,8 +10,8 @@ import WhyChooseDubaiSlider from './whyChooseDubaiSlider/WhyChooseDubaiSlider';
 import OurServicesSlider from './OurServicesSlider/OurServicesSlider';
 import MenuBar from '../ui/MenuBar/MenuBar';
 import BurgerMenu from '../ui/BurgerMenu/BurgerMenu';
-
 import ExploreDevelopers from '../Developers/ExploreDevs/ExploreDevelopers';
+import ExploreAreas from '../areas/ExploreAreas/ExploreAreas';
 import Special from '../Special/Special';
 
 import businessBay from '../../../assets/images/property/businessBay.jpg';
@@ -30,6 +30,11 @@ const Main = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalComponent, setModalComponent] = useState(null);
 
+  const callModal = (component) => {
+    setModalComponent(component);
+    setModalVisible(true);
+  };
+
   const closeModal = () => {
     setModalVisible(false);
   };
@@ -45,10 +50,7 @@ const Main = () => {
           <View style={styles.block}>
             <Text style={styles.title}>Special for you</Text>
             <TouchableOpacity
-              onPress={() => {
-                setModalComponent(<Special onCloseModal={closeModal} />);
-                setModalVisible(true);
-              }}>
+              onPress={() => callModal(<Special onCloseModal={closeModal} />)}>
               <Text style={styles.more}>More</Text>
             </TouchableOpacity>
           </View>
@@ -78,7 +80,13 @@ const Main = () => {
           <View style={styles.block}>
             <Text style={styles.title}>Explore areas</Text>
             <TouchableOpacity>
-              <Text style={styles.more}>More</Text>
+              <Text
+                style={styles.more}
+                onPress={() =>
+                  callModal(<ExploreAreas onCloseModal={closeModal} />)
+                }>
+                More
+              </Text>
             </TouchableOpacity>
           </View>
           <View style={{ alignItems: 'center' }}>
@@ -109,12 +117,9 @@ const Main = () => {
           <View style={styles.block}>
             <Text style={styles.title}>Explore developers</Text>
             <TouchableOpacity
-              onPress={() => {
-                setModalComponent(
-                  <ExploreDevelopers onCloseModal={closeModal} />
-                );
-                setModalVisible(true);
-              }}>
+              onPress={() =>
+                callModal(<ExploreDevelopers onCloseModal={closeModal} />)
+              }>
               <Text style={styles.more}>More</Text>
             </TouchableOpacity>
           </View>
@@ -140,8 +145,6 @@ const Main = () => {
       <MenuBar />
       <BurgerMenu isMenuOpen={openMenu} closeMenu={() => setOpenMenu(false)} />
       <BottomSheetModal visible={modalVisible}>
-        {/* <ExploreDevelopers onCloseModal={() => setModalVisible(false)} />
-        <Special onCloseModal={() => setModalVisible(false)} /> */}
         {modalComponent}
       </BottomSheetModal>
     </>

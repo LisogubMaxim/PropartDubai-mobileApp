@@ -1,4 +1,4 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -31,6 +31,12 @@ const styles = StyleSheet.create({
   banner: {
     width: '100%',
   },
+  overlay: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#fff',
+  },
   bannerDescr: {
     position: 'absolute',
     bottom: 18,
@@ -50,7 +56,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 16,
   },
-
+  categoryBlock: {
+    marginVertical: 40,
+  },
   sliderContainer: {
     flexDirection: 'row',
     gap: 12,

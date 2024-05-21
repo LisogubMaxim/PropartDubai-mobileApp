@@ -4,23 +4,32 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import PropertyCard from '../../ui/PropertyCard/PropertyCard';
 import GetConsultation from '../../ui/GetConsultation/GetConsultation';
 import MenuBar from '../../ui/MenuBar/MenuBar';
-import BurgerMenu from '../../ui/BurgerMenu/BurgerMenu';
+import CircleButton from '../../ui/CircleButton/CircleButton';
+import CategorySwitcher from '../../ui/CategorySwitcher/CategorySwitcher';
+import BottomSheetModal from '../../ui/BottomSheetModal/BottomSheetModal';
+import DeveloperProperties from '../DevProperties/DeveloperProperties';
 
 import emaarBanner from '../../../../assets/images/developers/emaarBanner.png';
 
-import { propertiesData } from '../../../data/developers/developersData';
+import {
+  propertiesData,
+  categoryData,
+} from '../../../data/developers/developersData';
 
 import styles from './aboutDevStyles';
-import CircleButton from '../../ui/CircleButton/CircleButton';
 
-const AboutDeveloper = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+const AboutDeveloper = ({ onCloseModal }) => {
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <>
-      <ScrollView>
+      <ScrollView style={{ backgroundColor: '#fff' }}>
         <View style={{ marginBottom: 20 }}>
           <Image source={emaarBanner} style={styles.banner} />
-          <CircleButton position={{ top: 60, left: 20 }} type="goBack" />
+          <CircleButton
+            position={{ top: 60, left: 20 }}
+            type="goBack"
+            onClick={onCloseModal}
+          />
           <View style={styles.bannerDescr}>
             <Text style={styles.mainTitle}>Emaar</Text>
             <Text style={styles.subtitle}>Developments: 241</Text>
@@ -34,10 +43,15 @@ const AboutDeveloper = () => {
             architectural landmarks and master-planned communities that redefine
             urban living standards.
           </Text>
+          <View style={styles.categoryBlock}>
+            <CategorySwitcher data={categoryData} />
+          </View>
           <View style={styles.block}>
             <Text style={styles.title}>Property by Emaar</Text>
             <TouchableOpacity>
-              <Text style={styles.more}>More</Text>
+              <Text style={styles.more} onPress={() => setModalVisible(true)}>
+                More
+              </Text>
             </TouchableOpacity>
           </View>
           <ScrollView
@@ -65,6 +79,10 @@ const AboutDeveloper = () => {
         </View>
       </ScrollView>
       <MenuBar />
+      {modalVisible && <View style={styles.overlay} />}
+      <BottomSheetModal visible={modalVisible}>
+        <DeveloperProperties onCloseModal={() => setModalVisible(false)} />
+      </BottomSheetModal>
     </>
   );
 };

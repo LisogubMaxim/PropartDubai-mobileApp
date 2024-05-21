@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal } from 'react-native';
+import { Modal, View } from 'react-native';
 
 const BottomSheetModal = ({ visible, children }) => {
   return (
