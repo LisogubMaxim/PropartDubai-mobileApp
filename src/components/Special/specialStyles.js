@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     header: {
         paddingTop: 60,
         paddingBottom: 8,
-        marginBottom: 16,
     },
 
     title: {
@@ -56,6 +55,7 @@ const styles = StyleSheet.create({
 
     body: {
         marginHorizontal: 20,
+        paddingTop: 16,
     },
 
     propos: {

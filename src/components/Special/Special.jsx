@@ -28,22 +28,23 @@ const Special = () => {
 
     return (
         <View style={styles.container}>
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={styles.header}>
-                    <View style={styles.title}>
-                        <Text style={styles.textTitle}>Special for you</Text>
-                        <TouchableOpacity style={styles.cross}>
-                            <CloseCrossSvg />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.search}>
-                        <SearchInput />
-                        <FiltersBtn />
-                    </View>
-                    {filterPoints && (
-                        <FilterPoints points={filterPoints} onPressDelete={handleClearPoint} onPressClearAll={handleClearAll} />
-                    )}
+            <View style={styles.header}>
+                <View style={styles.title}>
+                    <Text style={styles.textTitle}>Special for you</Text>
+                    <TouchableOpacity style={styles.cross}>
+                        <CloseCrossSvg />
+                    </TouchableOpacity>
                 </View>
+                <View style={styles.search}>
+                    <SearchInput placeholder="Search" />
+                    <FiltersBtn />
+                </View>
+                {filterPoints && (
+                    <FilterPoints points={filterPoints} onPressDelete={handleClearPoint} onPressClearAll={handleClearAll} />
+                )}
+            </View>
+
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.body}>
                     <View style={styles.propos}>
                         {propos.map((item, index) => (
