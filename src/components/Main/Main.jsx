@@ -11,6 +11,9 @@ import OurServicesSlider from './OurServicesSlider/OurServicesSlider';
 import MenuBar from '../ui/MenuBar/MenuBar';
 import BurgerMenu from '../ui/BurgerMenu/BurgerMenu';
 
+import ExploreDevelopers from '../Developers/ExploreDevs/ExploreDevelopers';
+import Special from '../Special/Special';
+
 import businessBay from '../../../assets/images/property/businessBay.jpg';
 
 import {
@@ -20,24 +23,36 @@ import {
 } from '../../data/mainScreenData/mainScreenData';
 
 import styles from './mainStyles';
+import BottomSheetModal from '../ui/BottomSheetModal/BottomSheetModal';
 
 const Main = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalComponent, setModalComponent] = useState(null);
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
   return (
     <>
       <View style={styles.container}>
         <MainHeader onClick={() => setOpenMenu((prev) => !prev)} />
+        <View style={styles.block}>
+          <SearchInput placeholder="Search property, area..." />
+          <FiltersBtn />
+        </View>
         <ScrollView>
           <View style={styles.block}>
-            <SearchInput placeholder="Search property, area..." />
-            <FiltersBtn />
-          </View>
-          <View style={styles.block}>
             <Text style={styles.title}>Special for you</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                setModalComponent(<Special onCloseModal={closeModal} />);
+                setModalVisible(true);
+              }}>
               <Text style={styles.more}>More</Text>
             </TouchableOpacity>
           </View>
+
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -93,7 +108,13 @@ const Main = () => {
           </View>
           <View style={styles.block}>
             <Text style={styles.title}>Explore developers</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                setModalComponent(
+                  <ExploreDevelopers onCloseModal={closeModal} />
+                );
+                setModalVisible(true);
+              }}>
               <Text style={styles.more}>More</Text>
             </TouchableOpacity>
           </View>
@@ -118,6 +139,11 @@ const Main = () => {
       </View>
       <MenuBar />
       <BurgerMenu isMenuOpen={openMenu} closeMenu={() => setOpenMenu(false)} />
+      <BottomSheetModal visible={modalVisible}>
+        {/* <ExploreDevelopers onCloseModal={() => setModalVisible(false)} />
+        <Special onCloseModal={() => setModalVisible(false)} /> */}
+        {modalComponent}
+      </BottomSheetModal>
     </>
   );
 };

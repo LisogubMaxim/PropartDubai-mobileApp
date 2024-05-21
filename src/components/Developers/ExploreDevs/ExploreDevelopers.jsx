@@ -12,21 +12,21 @@ import { developers } from '../../../data/developers/developersData';
 
 import styles from './exploreDevelopersStyles';
 
-const ExploreDevelopers = () => {
+const ExploreDevelopers = ({ onCloseModal }) => {
   return (
     <>
       <View style={styles.container}>
         <View style={[styles.block, { marginTop: 60 }]}>
           <Text style={styles.mainTitle}>Explore developers</Text>
-          <TouchableOpacity style={styles.close}>
+          <TouchableOpacity style={styles.close} onPress={onCloseModal}>
             <CloseCrossSvg />
           </TouchableOpacity>
         </View>
+        <View style={styles.block}>
+          <SearchInput placeholder="Enter the developer's name" />
+          <SortBtn />
+        </View>
         <ScrollView>
-          <View style={styles.block}>
-            <SearchInput placeholder="Enter the developer's name" />
-            <SortBtn />
-          </View>
           <View
             style={{
               gap: 12,

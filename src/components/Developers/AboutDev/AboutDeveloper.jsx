@@ -13,7 +13,7 @@ import { propertiesData } from '../../../data/developers/developersData';
 import styles from './aboutDevStyles';
 import CircleButton from '../../ui/CircleButton/CircleButton';
 
-const Main = () => {
+const AboutDeveloper = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
@@ -69,4 +69,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default AboutDeveloper;

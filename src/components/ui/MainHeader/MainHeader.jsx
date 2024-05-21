@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 
 import logoPng from '../../../../assets/images/logo.png';
@@ -7,6 +7,7 @@ import BurgerBtnSvg from '../../../../assets/svg/BurgerBtnSvg';
 import styles from './mainHeaderStyles';
 
 const MainHeader = ({ onClick }) => {
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <View style={styles.container}>
       <View

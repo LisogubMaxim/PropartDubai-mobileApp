@@ -34,11 +34,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <OurServices />
+      {/* <OurServices /> */}
       {/* <AboutDeveloper /> */}
       {/* <ExploreDevelopers /> */}
       {/* <DeveloperProperties /> */}
-      {/* <Main /> */}
+      <Main />
       {/* <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
