@@ -7,8 +7,6 @@ const styles = StyleSheet.create({
 
     header: {
         paddingTop: 60,
-        paddingBottom: 8,
-        marginBottom: 16,
     },
 
     title: {
