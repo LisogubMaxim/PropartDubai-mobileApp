@@ -14,7 +14,7 @@ const SearchInput = ({
   isError = false,
 }) => {
   return (
-    <View style={styles.SearchInput}>
+    <View style={styles.searchInput}>
       <SearchSvg style={styles.searchIcon} />
       <TextInput
         style={styles.input}

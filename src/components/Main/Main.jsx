@@ -42,7 +42,7 @@ const Main = () => {
     <>
       <View style={styles.container}>
         <MainHeader onClick={() => setOpenMenu((prev) => !prev)} />
-        <View style={styles.block}>
+        <View style={styles.inputBlock}>
           <SearchInput placeholder="Search property, area..." />
           <FiltersBtn />
         </View>
