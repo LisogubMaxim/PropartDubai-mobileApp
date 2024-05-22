@@ -5,12 +5,12 @@ import CircleButton from "../CircleButton/CircleButton";
 
 import styles from "./propertyCardStyles";
 
-const PropertyCard = ({ image, title, subtitle, width, height, amount, btnType, isButton = true, isTwoButton }) => {
+const PropertyCard = ({ image, title, subtitle, width, height, amount, btnType, isButton = true, isTwoButton, twoBtnType }) => {
     return (
         <View style={[styles.imageContent, { width }]}>
             <Image source={image} style={{ width, height, borderRadius: 16 }} />
             {isButton && <CircleButton type={btnType} />}
-            {isTwoButton && <CircleButton type={btnType} position={{ top: 12, right: 68 }} />}
+            {isTwoButton && <CircleButton type={twoBtnType} position={{ top: 12, right: 68 }} />}
             <View style={styles.imageInfo}>
                 <Text style={styles.title}>{title}</Text>
                 <View
