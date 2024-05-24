@@ -25,7 +25,7 @@ const ExploreDevelopers = ({ onCloseModal }) => {
             <CloseCrossSvg />
           </TouchableOpacity>
         </View>
-        <View style={styles.block}>
+        <View style={styles.inputBlock}>
           <SearchInput placeholder="Enter the developer's name" />
           <SortBtn />
         </View>

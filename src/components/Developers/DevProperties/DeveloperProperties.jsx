@@ -1,29 +1,35 @@
 import React, { useState } from 'react';
-import { ScrollView, View, Text } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
 
 import MenuBar from '../../ui/MenuBar/MenuBar';
-import BurgerMenu from '../../ui/BurgerMenu/BurgerMenu';
 import GetConsultation from '../../ui/GetConsultation/GetConsultation';
 import SearchInput from '../../ui/SearchInput/SearchInput';
 import FiltersBtn from '../../ui/FiltersBtn/FiltersBtn';
-import MainHeader from '../../ui/MainHeader/MainHeader';
 import PropertyCard from '../../ui/PropertyCard/PropertyCard';
 import Point from '../../ui/FilterPoints/Point/Point';
+import BackWhiteButtonSvg from '../../../../assets/svg/BackWhiteButtonSvg';
+import ModalWithCross from '../../ui/ModalWithCross/ModalWithCross';
+import Filters from '../../Filters/Filters';
 
 import { propertiesData } from '../../../data/developers/developersData';
 
 import styles from './developerPropStyles';
 
-const DeveloperProperties = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+const DeveloperProperties = ({ onCloseModal }) => {
+  const [filtersVisible, setFiltersVisible] = useState(false);
   return (
     <>
       <View style={styles.container}>
-        <MainHeader onClick={() => setOpenMenu((prev) => !prev)} />
+        <View style={styles.headerBlock}>
+          <TouchableOpacity onPress={onCloseModal}>
+            <BackWhiteButtonSvg />
+          </TouchableOpacity>
+          <Text style={styles.mainTitle}>Property by Emaar</Text>
+        </View>
         <ScrollView>
-          <View style={styles.block}>
+          <View style={styles.inputBlock}>
             <SearchInput placeholder="Search property, area..." />
-            <FiltersBtn />
+            <FiltersBtn callModal={() => setFiltersVisible(true)} />
           </View>
           <Point text={'Emaar'} />
           <View style={{ gap: 12, marginTop: 24, alignItems: 'center' }}>
@@ -44,7 +50,10 @@ const DeveloperProperties = () => {
         </ScrollView>
       </View>
       <MenuBar />
-      <BurgerMenu isMenuOpen={openMenu} closeMenu={() => setOpenMenu(false)} />
+      {filtersVisible && <View style={styles.overlay}></View>}
+      <ModalWithCross visible={filtersVisible}>
+        <Filters onCloseModal={() => setFiltersVisible(false)} />
+      </ModalWithCross>
     </>
   );
 };

@@ -13,12 +13,31 @@ const styles = StyleSheet.create({
     color: '#0F1121',
     fontFamily: 'OpenSans_600SemiBold',
   },
-
+  mainTitle: {
+    fontSize: 24,
+    color: '#333863',
+    fontFamily: 'OpenSans_600SemiBold',
+  },
+  headerBlock: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    marginBottom: 16,
+    marginTop: 60,
+  },
   block: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom: 16,
+  },
+  inputBlock: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
     marginBottom: 16,
   },
   getHelp: {
@@ -27,6 +46,12 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans_600SemiBold',
     marginTop: 48,
     marginBottom: 16,
+  },
+  overlay: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
 });
 

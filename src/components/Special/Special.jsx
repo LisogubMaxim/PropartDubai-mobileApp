@@ -7,6 +7,8 @@ import FiltersBtn from '../ui/FiltersBtn/FiltersBtn';
 import SearchInput from '../ui/SearchInput/SearchInput';
 import PropertyCard from '../ui/PropertyCard/PropertyCard';
 import FilterPoints from '../ui/FilterPoints/FilterPoints';
+import ModalWithCross from '../ui/ModalWithCross/ModalWithCross';
+import Filters from '../Filters/Filters';
 
 import CloseCrossSvg from '../../../assets/svg/CloseCrossSvg';
 
@@ -17,6 +19,7 @@ import styles from './specialStyles';
 const Special = ({ onCloseModal }) => {
   const propos = specialData.propos;
   const [filterPoints, setFilterPoints] = useState(specialData.filterPoints);
+  const [filtersVisible, setFiltersVisible] = useState(false);
 
   const handleClearPoint = (point) => {
     setFilterPoints(filterPoints.filter((item) => item !== point));
@@ -37,7 +40,7 @@ const Special = ({ onCloseModal }) => {
         </View>
         <View style={styles.search}>
           <SearchInput placeholder="Search" />
-          <FiltersBtn />
+          <FiltersBtn callModal={() => setFiltersVisible(true)} />
         </View>
         {filterPoints && (
           <FilterPoints
@@ -76,6 +79,10 @@ const Special = ({ onCloseModal }) => {
         </View>
       </ScrollView>
       <MenuBar />
+      {filtersVisible && <View style={styles.overlay}></View>}
+      <ModalWithCross visible={filtersVisible}>
+        <Filters onCloseModal={() => setFiltersVisible(false)} />
+      </ModalWithCross>
     </View>
   );
 };
