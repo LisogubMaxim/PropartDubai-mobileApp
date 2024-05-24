@@ -4,12 +4,6 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     position: 'relative',
-    // Android shadow
-
-    // iOS shadow
-
-    // justifyContent: 'center',
-    // alignItems: 'center',
   },
   input: {
     minWidth: 294,
@@ -40,6 +34,7 @@ const styles = StyleSheet.create({
     height: 24,
     left: 16,
     top: 12,
+    zIndex: 999,
   },
 });
 

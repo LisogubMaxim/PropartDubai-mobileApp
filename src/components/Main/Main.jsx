@@ -13,6 +13,8 @@ import BurgerMenu from '../ui/BurgerMenu/BurgerMenu';
 import ExploreDevelopers from '../Developers/ExploreDevs/ExploreDevelopers';
 import ExploreAreas from '../areas/ExploreAreas/ExploreAreas';
 import Special from '../Special/Special';
+import ModalWithCross from '../ui/ModalWithCross/ModalWithCross';
+import Filters from '../Filters/Filters';
 
 import businessBay from '../../../assets/images/property/businessBay.jpg';
 
@@ -28,6 +30,7 @@ import BottomSheetModal from '../ui/BottomSheetModal/BottomSheetModal';
 const Main = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
+  const [filtersVisible, setFiltersVisible] = useState(false);
   const [modalComponent, setModalComponent] = useState(null);
 
   const callModal = (component) => {
@@ -44,7 +47,7 @@ const Main = () => {
         <MainHeader onClick={() => setOpenMenu((prev) => !prev)} />
         <View style={styles.inputBlock}>
           <SearchInput placeholder="Search property, area..." />
-          <FiltersBtn />
+          <FiltersBtn callModal={() => setFiltersVisible(true)} />
         </View>
         <ScrollView>
           <View style={styles.block}>
@@ -147,6 +150,10 @@ const Main = () => {
       <BottomSheetModal visible={modalVisible}>
         {modalComponent}
       </BottomSheetModal>
+      {filtersVisible && <View style={styles.overlay}></View>}
+      <ModalWithCross visible={filtersVisible}>
+        <Filters onCloseModal={() => setFiltersVisible(false)} />
+      </ModalWithCross>
     </>
   );
 };

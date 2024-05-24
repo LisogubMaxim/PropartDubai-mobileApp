@@ -5,9 +5,9 @@ import SettingsSvg from '../../../../assets/svg/SettingsSvg';
 
 import styles from './filtersBtnStyles';
 
-const FiltersBtn = () => {
+const FiltersBtn = ({ callModal }) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={callModal}>
       <View style={styles.button}>
         <SettingsSvg />
       </View>
