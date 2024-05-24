@@ -164,3 +164,13 @@ export const filtersData = {
     { value: 'HL', label: 'Price - High to low' },
   ],
 };
+
+export const initialFilters = {
+  areas: [],
+  types: [],
+  size: { min: '', max: '' },
+  bedrooms: [],
+  price: { min: '', max: '' },
+  completion_status: '',
+  sort_params: '',
+};

@@ -5,14 +5,14 @@ import SelectionButton from '../../ui/customSelectionButton/SelectionButton/Sele
 
 import styles from './bedroomsStyles';
 
-const Bedrooms = () => {
-  const [numberOfRooms, setNumberOfRooms] = useState([]);
+const Bedrooms = ({ onChange, selectedValues, clearAll }) => {
+  // const [numberOfRooms, setNumberOfRooms] = useState([]);
 
-  const handleNumberOfRoomsSelection = (number, isSelected) => {
+  const handleNumberOfBedrooms = (number, isSelected) => {
     if (isSelected) {
-      setNumberOfRooms([...numberOfRooms, number]);
+      onChange([...selectedValues, number]);
     } else {
-      setNumberOfRooms(numberOfRooms.filter((type) => type !== number));
+      onChange(selectedValues.filter((type) => type !== number));
     }
   };
 
@@ -21,31 +21,37 @@ const Bedrooms = () => {
       <View style={styles.container}>
         <View style={styles.row}>
           <SelectionButton
+            clearAll={clearAll}
             text="1"
-            setNumberOfRooms={handleNumberOfRoomsSelection}
+            setNumberOfRooms={handleNumberOfBedrooms}
           />
           <SelectionButton
+            clearAll={clearAll}
             text="2"
-            setNumberOfRooms={handleNumberOfRoomsSelection}
+            setNumberOfRooms={handleNumberOfBedrooms}
           />
           <SelectionButton
+            clearAll={clearAll}
             text="3"
-            setNumberOfRooms={handleNumberOfRoomsSelection}
+            setNumberOfRooms={handleNumberOfBedrooms}
           />
           <SelectionButton
+            clearAll={clearAll}
             text="4"
-            setNumberOfRooms={handleNumberOfRoomsSelection}
+            setNumberOfRooms={handleNumberOfBedrooms}
           />
         </View>
         <View style={styles.row}>
           <SelectionButton
+            clearAll={clearAll}
             text="4+"
-            setNumberOfRooms={handleNumberOfRoomsSelection}
+            setNumberOfRooms={handleNumberOfBedrooms}
           />
           <View style={styles.doubleButton}>
             <SelectionButton
+              clearAll={clearAll}
               text="Studio"
-              setNumberOfRooms={handleNumberOfRoomsSelection}
+              setNumberOfRooms={handleNumberOfBedrooms}
             />
           </View>
           <View style={styles.pass}></View>

@@ -34,6 +34,7 @@ export const RangeDropDown = ({
     onChangeValue(item);
     setSelectedValue(item);
     setIsActive(!isActive);
+    console.log(item);
   };
 
   useEffect(() => {
@@ -46,6 +47,8 @@ export const RangeDropDown = ({
     )
       setSelectedValue(values[values.indexOf(minValue) + 1]);
   }, [selectedValue, minValue]);
+
+  // console.log(selectedValue);
 
   return (
     <View style={[styles.rangeContainer, isActive ? styles.rangeActive : '']}>

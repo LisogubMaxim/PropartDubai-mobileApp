@@ -1,20 +1,25 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  body: {
-    flex: 1,
+  container: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
     gap: 12,
     marginBottom: 26,
-    justifyContent: 'center',
-  },
-  button: {
-    width: '48%',
   },
   text: {
     fontSize: 16,
     fontFamily: 'Nunito_400Regular',
+    color: '#0F1121',
+  },
+
+  button: {
+    height: 56,
+    borderWidth: 1,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+    borderColor: '#CFCFD3',
   },
 });
 

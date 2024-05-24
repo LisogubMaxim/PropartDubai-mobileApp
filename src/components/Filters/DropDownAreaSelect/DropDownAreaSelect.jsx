@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { MultiSelect } from 'react-native-element-dropdown';
+
 import ArrowDownSvg from '../../../../assets/svg/ArrowDownSvg';
 import CheckedIconSvg from '../../../../assets/svg/CheckedIconSvg';
 
-const DropDownAreaSelect = ({ data }) => {
-  const [selected, setSelected] = useState([]);
+import styles from './dropDownAreaStyles';
 
+const DropDownAreaSelect = ({ options, selectedValues, onChange }) => {
   const handleSelect = (item) => {
     let newSelected;
-    if (selected.includes(item.value)) {
-      newSelected = selected.filter((value) => value !== item.value);
+    if (selectedValues.includes(item.value)) {
+      newSelected = selectedValues.filter((value) => value !== item.value);
     } else {
-      newSelected = [...selected, item.value];
+      newSelected = [...selectedValues, item.value];
     }
-    setSelected(newSelected);
+    onChange(newSelected);
   };
 
   return (
@@ -24,12 +25,12 @@ const DropDownAreaSelect = ({ data }) => {
       placeholderStyle={styles.placeholderStyle}
       renderRightIcon={() => <ArrowDownSvg />}
       activeColor="#fff"
-      data={data}
+      data={options}
       visibleSelectedItem={false}
       labelField="label"
       valueField="value"
       placeholder="Choose area"
-      value={selected}
+      value={selectedValues}
       renderItem={(item) => (
         <TouchableOpacity
           onPress={() => handleSelect(item)}
@@ -38,68 +39,17 @@ const DropDownAreaSelect = ({ data }) => {
           <View
             style={[
               styles.checkBox,
-              selected.includes(item.value) && styles.checkedBox,
+              selectedValues.includes(item.value) && styles.checkedBox,
             ]}>
             <CheckedIconSvg />
           </View>
         </TouchableOpacity>
       )}
       onChange={(item) => {
-        setSelected(item);
+        onChange(item);
       }}
     />
   );
 };
 
 export default DropDownAreaSelect;
-
-const styles = StyleSheet.create({
-  listContainer: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#CFCFD3',
-    borderRadius: 6,
-    height: 300,
-  },
-  itemContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 17,
-    borderBottomWidth: 1,
-    borderBottomColor: '#F1F1F1',
-  },
-  text: {
-    fontFamily: 'Nunito_400Regular',
-    fontSize: 16,
-    color: '#0F1121',
-  },
-  dropdown: {
-    height: 56,
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#CFCFD3',
-    borderRadius: 6,
-    paddingHorizontal: 16,
-    paddingVertical: 17,
-    marginBottom: 26,
-  },
-  placeholderStyle: {
-    fontSize: 16,
-    color: '#6F707A',
-  },
-  checkBox: {
-    width: 24,
-    height: 24,
-    borderWidth: 1,
-    borderColor: '#B7B8BC',
-    borderRadius: 4,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  checkedBox: {
-    backgroundColor: '#333863',
-  },
-});

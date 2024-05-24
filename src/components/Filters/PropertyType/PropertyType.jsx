@@ -1,47 +1,30 @@
-import { Text, View } from 'react-native';
-import { useState } from 'react';
+import React from 'react';
+import { View } from 'react-native';
 
 import SelectionButton from '../../ui/customSelectionButton/SelectionButton/SelectionButton';
 
 import styles from './propertyTypeStyles';
 
-const PropertyType = () => {
-  const [typeOfHousing, setTypeOfHousing] = useState([]);
-
-  const handleTypeOfHousingSelection = (housingType, isSelected) => {
+const PropertyType = ({ options, onChange, selectedValues, clearAll }) => {
+  const handleTypeOfProperty = (housingType, isSelected) => {
     if (isSelected) {
-      setTypeOfHousing([...typeOfHousing, housingType]);
+      onChange([...selectedValues, housingType]);
     } else {
-      setTypeOfHousing(typeOfHousing.filter((type) => type !== housingType));
+      onChange(selectedValues.filter((type) => type !== housingType));
     }
   };
 
   return (
     <View style={styles.body}>
-      <View style={styles.button}>
-        <SelectionButton
-          text="Plots"
-          setNumberOfRooms={handleTypeOfHousingSelection}
-        />
-      </View>
-      <View style={styles.button}>
-        <SelectionButton
-          text="Townhouse"
-          setNumberOfRooms={handleTypeOfHousingSelection}
-        />
-      </View>
-      <View style={styles.button}>
-        <SelectionButton
-          text="Villa"
-          setNumberOfRooms={handleTypeOfHousingSelection}
-        />
-      </View>
-      <View style={styles.button}>
-        <SelectionButton
-          text="Apartments"
-          setNumberOfRooms={handleTypeOfHousingSelection}
-        />
-      </View>
+      {options.map((property, idx) => (
+        <View style={styles.button} key={idx}>
+          <SelectionButton
+            clearAll={clearAll}
+            text={property.label}
+            setNumberOfRooms={handleTypeOfProperty}
+          />
+        </View>
+      ))}
     </View>
   );
 };

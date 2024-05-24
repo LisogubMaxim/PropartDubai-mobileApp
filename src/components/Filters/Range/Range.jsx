@@ -6,37 +6,40 @@ import { RangeDropDown } from './RangeDropDown/RangeDropDown';
 import styles from './rangeStyles';
 import LineSvg from '../../../../assets/svg/LineSvg';
 
-const Range = ({ onChange, data }) => {
+const Range = ({ onChange, options, selectedValues }) => {
   // const values = ['150K', '250K', '500K', '1M', '5M', 'Unlimited'];
 
   const [minValue, setMinValue] = useState('0');
   const [maxValue, setMaxValue] = useState('0');
 
+  // console.log(`min: ${minValue}; max: ${maxValue}`);
+
   const handleMinChange = (value) => {
     setMinValue(value);
-    // onChange(value, maxValue);
+    // onChange({ min: value, max: maxValue });
+    // console.log(selectedValues);
   };
 
   const handleMaxChange = (value) => {
     setMaxValue(value);
-    // onChange(minValue, value);
+    // onChange({ min: minValue, max: value });
   };
 
   return (
     <View style={styles.range}>
       <RangeDropDown
         onChangeValue={handleMinChange}
-        values={data}
+        values={options}
         rangeType="Min"
-        defaultValue={data[0]}
+        defaultValue={options[0]}
       />
       <LineSvg />
       <RangeDropDown
         onChangeValue={handleMaxChange}
-        values={data}
+        values={options}
         minValue={minValue}
         rangeType="Max"
-        defaultValue={data[data.length - 1]}
+        defaultValue={options[options.length - 1]}
       />
     </View>
   );
