@@ -1,13 +1,11 @@
+import React from 'react';
 import { View } from 'react-native';
-import { useState } from 'react';
 
 import SelectionButton from '../../ui/customSelectionButton/SelectionButton/SelectionButton';
 
 import styles from './bedroomsStyles';
 
 const Bedrooms = ({ onChange, selectedValues, clearAll }) => {
-  // const [numberOfRooms, setNumberOfRooms] = useState([]);
-
   const handleNumberOfBedrooms = (number, isSelected) => {
     if (isSelected) {
       onChange([...selectedValues, number]);

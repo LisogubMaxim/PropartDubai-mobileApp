@@ -1,13 +1,5 @@
-import {
-  Text,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-  ScrollView,
-} from 'react-native';
-import { useEffect, useRef, useState } from 'react';
-
-import ArrowDownSvg from '../../../../../assets/svg/ArrowDownSvg';
+import { Text, TouchableOpacity, View, ScrollView } from 'react-native';
+import { useEffect, useState } from 'react';
 
 import styles from './rangeStyles';
 
@@ -17,6 +9,7 @@ export const RangeDropDown = ({
   minValue = '0',
   rangeType = '',
   defaultValue,
+  clearAll,
 }) => {
   const [isActive, setIsActive] = useState(false);
   const [selectedValue, setSelectedValue] = useState(minValue);
@@ -34,21 +27,11 @@ export const RangeDropDown = ({
     onChangeValue(item);
     setSelectedValue(item);
     setIsActive(!isActive);
-    console.log(item);
   };
 
   useEffect(() => {
-    if (minValue === 'Unlimited') {
-      setSelectedValue('Unlimited');
-      onChangeValue('Unlimited');
-    } else if (
-      minValue !== '0' &&
-      values.indexOf(minValue) >= values.indexOf(selectedValue)
-    )
-      setSelectedValue(values[values.indexOf(minValue) + 1]);
-  }, [selectedValue, minValue]);
-
-  // console.log(selectedValue);
+    setSelectedValue('0');
+  }, [clearAll]);
 
   return (
     <View style={[styles.rangeContainer, isActive ? styles.rangeActive : '']}>

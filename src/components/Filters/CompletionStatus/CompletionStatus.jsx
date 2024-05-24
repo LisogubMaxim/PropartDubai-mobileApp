@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 
 import styles from './completionStyles';
 
 const CompletionStatus = ({ selectedValue, onChange }) => {
-  // const [isSelected, setIsSelected] = useState('');
-
   const btnLabels = ['Any', 'Ready', 'Off-plan'];
 
   const handlePress = (status) => {

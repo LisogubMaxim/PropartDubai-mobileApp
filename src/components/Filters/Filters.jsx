@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
 import { filtersData, initialFilters } from '../../data/filtersData';
 
@@ -17,6 +11,8 @@ import Bedrooms from './Bedrooms/Bedrooms';
 import PropertyType from './PropertyType/PropertyType';
 import CompletionStatus from './CompletionStatus/CompletionStatus';
 
+import styles from './filtersStyles';
+
 const Filters = ({ onCloseModal }) => {
   const [selectedFilters, setSelectedFilters] = useState(initialFilters);
   const [clearAll, setClearAll] = useState(false);
@@ -27,8 +23,6 @@ const Filters = ({ onCloseModal }) => {
       [name]: value,
     }));
   };
-
-  // console.log(selectedFilters.size);
 
   const clearAllFilters = () => {
     setSelectedFilters(initialFilters);
@@ -62,9 +56,10 @@ const Filters = ({ onCloseModal }) => {
         />
         <Text style={styles.title}>Size</Text>
         <Range
+          clearAll={clearAll}
           options={filtersData.sizes}
           selectedValues={selectedFilters.size}
-          onChange={(value) => handleSelectFilters('sizes', value)}
+          onChange={(value) => handleSelectFilters('size', value)}
         />
         <Text style={styles.title}>Bedrooms</Text>
         <Bedrooms
@@ -74,7 +69,12 @@ const Filters = ({ onCloseModal }) => {
           onChange={(value) => handleSelectFilters('bedrooms', value)}
         />
         <Text style={styles.title}>Price</Text>
-        <Range options={filtersData.prices} />
+        <Range
+          clearAll={clearAll}
+          options={filtersData.prices}
+          selectedValues={selectedFilters.price}
+          onChange={(value) => handleSelectFilters('price', value)}
+        />
         <Text style={styles.title}>Completion status</Text>
         <CompletionStatus
           selectedValue={selectedFilters.completion_status}
@@ -92,34 +92,3 @@ const Filters = ({ onCloseModal }) => {
 };
 
 export default Filters;
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 20,
-    height: '95%',
-  },
-  headerBlock: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginTop: 60,
-    marginBottom: 24,
-  },
-  mainTitle: {
-    fontSize: 24,
-    color: '#333863',
-    fontFamily: 'OpenSans_600SemiBold',
-  },
-  title: {
-    fontSize: 16,
-    color: '#0F1121',
-    fontFamily: 'OpenSans_600SemiBold',
-    marginBottom: 12,
-  },
-  clearAll: {
-    fontFamily: 'Nunito_500Medium',
-    fontSize: 16,
-    color: '#333863',
-    textDecorationLine: 'underline',
-  },
-});

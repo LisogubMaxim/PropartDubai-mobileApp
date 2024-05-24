@@ -8,12 +8,15 @@ import FiltersBtn from '../../ui/FiltersBtn/FiltersBtn';
 import PropertyCard from '../../ui/PropertyCard/PropertyCard';
 import Point from '../../ui/FilterPoints/Point/Point';
 import BackWhiteButtonSvg from '../../../../assets/svg/BackWhiteButtonSvg';
+import ModalWithCross from '../../ui/ModalWithCross/ModalWithCross';
+import Filters from '../../Filters/Filters';
 
 import { propertiesData } from '../../../data/developers/developersData';
 
 import styles from './developerPropStyles';
 
 const DeveloperProperties = ({ onCloseModal }) => {
+  const [filtersVisible, setFiltersVisible] = useState(false);
   return (
     <>
       <View style={styles.container}>
@@ -26,7 +29,7 @@ const DeveloperProperties = ({ onCloseModal }) => {
         <ScrollView>
           <View style={styles.inputBlock}>
             <SearchInput placeholder="Search property, area..." />
-            <FiltersBtn />
+            <FiltersBtn callModal={() => setFiltersVisible(true)} />
           </View>
           <Point text={'Emaar'} />
           <View style={{ gap: 12, marginTop: 24, alignItems: 'center' }}>
@@ -47,6 +50,10 @@ const DeveloperProperties = ({ onCloseModal }) => {
         </ScrollView>
       </View>
       <MenuBar />
+      {filtersVisible && <View style={styles.overlay}></View>}
+      <ModalWithCross visible={filtersVisible}>
+        <Filters onCloseModal={() => setFiltersVisible(false)} />
+      </ModalWithCross>
     </>
   );
 };

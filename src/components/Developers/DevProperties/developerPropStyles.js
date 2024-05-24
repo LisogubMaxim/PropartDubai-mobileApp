@@ -47,6 +47,12 @@ const styles = StyleSheet.create({
     marginTop: 48,
     marginBottom: 16,
   },
+  overlay: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
 });
 
 export default styles;

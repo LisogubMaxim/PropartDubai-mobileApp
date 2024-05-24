@@ -21,6 +21,7 @@ import ExploreDevelopers from './src/components/Developers/ExploreDevs/ExploreDe
 import Special from './src/components/Special/Special';
 import AboutDeveloper from './src/components/Developers/AboutDev/AboutDeveloper';
 import OurServices from './src/components/OurServices/OurServices';
+import AreaProperties from './src/components/areas/AreaProperties/AreaProperties';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      {/* <AreaProperties /> */}
       {/* <OurServices /> */}
       {/* <AboutDeveloper /> */}
       {/* <ExploreDevelopers /> */}
