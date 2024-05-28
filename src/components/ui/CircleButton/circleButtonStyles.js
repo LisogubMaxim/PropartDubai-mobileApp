@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     backgroundColor: 'rgba(15, 17, 33, 0.3)',
     borderRadius: 50,
+    zIndex: 10,
   },
 });
 
