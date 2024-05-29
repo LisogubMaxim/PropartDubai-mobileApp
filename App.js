@@ -9,7 +9,7 @@ import {
   Nunito_500Medium,
   Nunito_400Regular,
 } from '@expo-google-fonts/nunito';
-import { OpenSans_600SemiBold } from '@expo-google-fonts/open-sans';
+import { OpenSans_400Regular, OpenSans_600SemiBold } from '@expo-google-fonts/open-sans';
 
 import Registration from './src/components/Registration/Registration';
 import SignIn from './src/components/SignIn/SignInComponent/SignIn';
@@ -22,6 +22,7 @@ import Special from './src/components/Special/Special';
 import AboutDeveloper from './src/components/Developers/AboutDev/AboutDeveloper';
 import OurServices from './src/components/OurServices/OurServices';
 import AreaProperties from './src/components/areas/AreaProperties/AreaProperties';
+import ProjectProperty from './src/components/ProjectProperty/ProjectProperty';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,7 @@ export default function App() {
     Nunito_700Bold,
     Nunito_500Medium,
     Nunito_400Regular,
+    OpenSans_400Regular,
     OpenSans_600SemiBold,
   });
 
@@ -40,7 +42,8 @@ export default function App() {
       {/* <AboutDeveloper /> */}
       {/* <ExploreDevelopers /> */}
       {/* <DeveloperProperties /> */}
-      <Main />
+      {/* <Main /> */}
+      <ProjectProperty />
       {/* <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
@@ -61,6 +64,11 @@ export default function App() {
           <Stack.Screen
             name="Main"
             component={Main}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ProjectProperty"
+            component={ProjectProperty}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
