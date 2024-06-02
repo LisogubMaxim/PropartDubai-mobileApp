@@ -108,16 +108,20 @@ const ClusteredMapView = ({ onPressBackButton }) => {
     }, [height])
 
     return (
-        <>
+        <Animated.View
+            style={{ flex: 1, transform: [{ translateY: position }] }}
+        >
             <MapView
                 style={{ flex: 1 }}
                 initialRegion={initialRegion}
                 onRegionChangeComplete={handleRegionChangeComplete}
                 toolbarEnabled={false}
-                onPress={() => {
-                    setSelectedMarkerId(null);
-                    setSelectedMarkersId(null);
-                    setSelectedClusterId(null);
+                onPress={(e) => {
+                    if (e.target === e.currentTarget) {
+                        setSelectedMarkerId(null);
+                        setSelectedMarkersId(null);
+                        setSelectedClusterId(null);
+                    }
                 }}
             >
                 {markers.map((marker) => {
@@ -231,7 +235,7 @@ const ClusteredMapView = ({ onPressBackButton }) => {
             <ModalWithCross visible={filtersVisible}>
                 <Filters onCloseModal={() => setFiltersVisible(false)} />
             </ModalWithCross>
-        </>
+        </Animated.View>
     );
 };
 
