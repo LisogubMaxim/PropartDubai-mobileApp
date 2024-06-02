@@ -63,13 +63,13 @@ const styles = StyleSheet.create({
 
     down: {
         position: "absolute",
-        bottom: 12,
+        bottom: 90,
         width: "100%",
     },
 
     button: {
         height: 44,
-        margin: "auto",
+        marginHorizontal: "auto",
         backgroundColor: "#ffffff",
         borderRadius: 40,
         justifyContent: "center",

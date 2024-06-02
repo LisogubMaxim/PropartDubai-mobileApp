@@ -23,6 +23,7 @@ import AboutDeveloper from './src/components/Developers/AboutDev/AboutDeveloper'
 import OurServices from './src/components/OurServices/OurServices';
 import AreaProperties from './src/components/areas/AreaProperties/AreaProperties';
 import ProjectProperty from './src/components/ProjectProperty/ProjectProperty';
+import MapComponent from './src/components/Map/MapComponent';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,7 +44,8 @@ export default function App() {
       {/* <ExploreDevelopers /> */}
       {/* <DeveloperProperties /> */}
       {/* <Main /> */}
-      <ProjectProperty />
+      {/* <ProjectProperty /> */}
+      <MapComponent />
       {/* <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
