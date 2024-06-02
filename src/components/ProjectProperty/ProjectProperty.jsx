@@ -111,7 +111,7 @@ const ProjectProperty = () => {
           </View>
         </View>
 
-        {/* <Location polygon={polygon} /> */}
+        <Location polygon={polygon} />
 
         <View style={styles.content}>
           <AboutDeveloper />

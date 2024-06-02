@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { Animated, Dimensions, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import SuperCluster from "supercluster";
 
-import PropertyCard from "../ui/PropertyCard/PropertyCard";
-import image from "../../../assets/images/map/image.png";
-import imageOpacity from "../../../assets/images/map/imageOpacity.png";
-import FilterSvg from "../../../assets/svg/FilterSvg";
-import BackSvg from "../../../assets/svg/BackSvg";
+import PropertyCard from "../../ui/PropertyCard/PropertyCard";
+import image from "../../../../assets/images/map/image.png";
+import imageOpacity from "../../../../assets/images/map/imageOpacity.png";
+import FilterSvg from "../../../../assets/svg/FilterSvg";
+import BackSvg from "../../../../assets/svg/BackSvg";
+import SearchInput from "../../ui/SearchInput/SearchInput";
+import Filters from "../../Filters/Filters";
+import ModalWithCross from "../../ui/ModalWithCross/ModalWithCross";
 
-import mapData from "../../data/mapData";
+import mapData from "../../../data/mapData";
 
 import styles from "./mapComponentStyles";
-import SearchInput from "../ui/SearchInput/SearchInput";
-import Filters from "../Filters/Filters";
-import ModalWithCross from "../ui/ModalWithCross/ModalWithCross";
 
 const ClusteredMapView = ({ onPressBackButton }) => {
     const [markers, setMarkers] = useState([]);
@@ -96,6 +96,17 @@ const ClusteredMapView = ({ onPressBackButton }) => {
         setSelectedClusterId(null);
     };
 
+    const height = Dimensions.get('window').height;
+    const position = useRef(new Animated.Value(height)).current
+
+    useEffect(() => {
+        Animated.timing(position, {
+            toValue: 0,
+            duration: 300,
+            useNativeDriver: true,
+        }).start();
+    }, [height])
+
     return (
         <>
             <MapView
@@ -160,7 +171,6 @@ const ClusteredMapView = ({ onPressBackButton }) => {
                         );
                     }
                 })}
-                <TouchableOpacity></TouchableOpacity>
             </MapView>
 
             <View style={styles.top}>

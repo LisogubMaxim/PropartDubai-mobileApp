@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { View, Text, PanResponder, StyleSheet } from 'react-native';
-import Map from './Map'
 import SearchList from './SearchList/SearchList'
+import ClusteredMapView from './MapView/ClusteredMapView';
 
 const MapComponent = () => {
   const [isSearchListOpen, setIsSearchListOpen] = useState(false);
@@ -24,7 +24,7 @@ const MapComponent = () => {
       {isSearchListOpen ? (
         <SearchList />
       ) : (
-        <Map />)
+        <ClusteredMapView onPressBackButton={() => {}} />)
       }
       <View
         {...panResponder.panHandlers}
