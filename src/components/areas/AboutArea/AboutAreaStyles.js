@@ -1,6 +1,10 @@
 import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+    aboutArea: {
+        backgroundColor: "#ffffff",
+    },
+
     header: {
         height: 400,
         width: "100%",

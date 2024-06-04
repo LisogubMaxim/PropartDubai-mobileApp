@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 import CloseCrossSvg from "../../../../assets/svg/CloseCrossSvg";
 import InformationPanel from "../../ui/InformationPanel/InformationPanel";
@@ -14,7 +14,9 @@ const EmployeeVisa = ({ handleClose }) => {
         <View style={styles.visa}>
             <View style={styles.header}>
                 <Text style={styles.title}>Employee visa</Text>
-                <CloseCrossSvg onPress={handleClose} />
+                <TouchableOpacity onPress={handleClose}>
+                    <CloseCrossSvg />
+                </TouchableOpacity>
             </View>
             <View style={styles.body}>
                 <Text style={styles.text}>Applying for an employee visa through hiring and drawing up an employment contract.</Text>

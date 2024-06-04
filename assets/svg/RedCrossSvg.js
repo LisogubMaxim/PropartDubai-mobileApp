@@ -1,18 +1,9 @@
-import * as React from 'react';
-import Svg, { Rect, Path } from 'react-native-svg';
-const CrossSvg = (props) => (
-  <Svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={20}
-    height={20}
-    fill="none"
-    {...props}>
-    <Path
-      stroke="#6F707A"
-      strokeLinecap="round"
-      strokeWidth={1.6}
-      d="M3.333 6.667h10m0 0a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0ZM7.5 13.334h9.167m-9.167 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"
-    />
-  </Svg>
+import * as React from "react";
+import Svg, { Rect, Path } from "react-native-svg";
+const SvgComponent = (props) => (
+    <Svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="none" {...props}>
+        <Rect width={16} height={16} fill="#F14336" rx={8} />
+        <Path stroke="#fff" strokeLinecap="round" strokeWidth={1.2} d="m11 5-6 6m6 0L5 5" />
+    </Svg>
 );
-export default CrossSvg;
+export default SvgComponent;

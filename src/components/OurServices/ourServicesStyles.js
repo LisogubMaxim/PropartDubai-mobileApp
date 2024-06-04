@@ -1,11 +1,16 @@
 import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+    container: {
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#ffffff",
+    },
+
     ourServices: {
         paddingTop: 68,
         marginLeft: 20,
         marginRight: 20,
-        flex: 1,
         zIndex: 0,
     },
 

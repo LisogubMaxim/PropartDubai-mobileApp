@@ -5,7 +5,7 @@ import ArrowDownSvg from "../../../../../assets/svg/ArrowDownSvg";
 
 import styles from "./menuItemStyles";
 
-const MenuItem = ({ title, list = null, isBorder = false }) => {
+const MenuItem = ({ title, list = null, isBorder = false, onPress }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleOpenList = () => {
@@ -14,7 +14,7 @@ const MenuItem = ({ title, list = null, isBorder = false }) => {
 
     return (
         <View>
-            <TouchableOpacity style={styles.button} onPress={handleOpenList}>
+            <TouchableOpacity style={styles.button} onPress={list ? handleOpenList : onPress}>
                 <Text style={styles.title}>{title}</Text>
                 {list && (
                     <View style={{ transform: isOpen ? "rotate(180deg)" : "" }}>
@@ -25,7 +25,7 @@ const MenuItem = ({ title, list = null, isBorder = false }) => {
             {list && isOpen && (
                 <View style={isBorder && styles.border}>
                     {list.map((item, index) => (
-                        <TouchableOpacity key={index} style={styles.listItem}>
+                        <TouchableOpacity key={index} style={styles.listItem} onPress={() => onPress(item)}>
                             <Text style={styles.textItem}>{item}</Text>
                         </TouchableOpacity>
                     ))}
