@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 import CloseCrossSvg from "../../../../assets/svg/CloseCrossSvg";
 import InformationPanel from "../../ui/InformationPanel/InformationPanel";
@@ -14,7 +14,9 @@ const FreelanceVisa = ({ handleClose }) => {
         <View style={styles.visa}>
             <View style={styles.header}>
                 <Text style={styles.title}>Freelance visa</Text>
-                <CloseCrossSvg onPress={handleClose} />
+                <TouchableOpacity onPress={handleClose}>
+                    <CloseCrossSvg />
+                </TouchableOpacity>
             </View>
             <View style={styles.body}>
                 <Text style={styles.text}>This visa is for specialized self-employed professionals serving legal entities.</Text>

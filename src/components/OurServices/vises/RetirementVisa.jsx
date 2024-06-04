@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 import CloseCrossSvg from "../../../../assets/svg/CloseCrossSvg";
 import InformationPanel from "../../ui/InformationPanel/InformationPanel";
@@ -14,7 +14,9 @@ const RetirementVisa = ({ handleClose }) => {
         <View style={styles.visa}>
             <View style={styles.header}>
                 <Text style={styles.title}>Retirement visa</Text>
-                <CloseCrossSvg onPress={handleClose} />
+                <TouchableOpacity onPress={handleClose}>
+                    <CloseCrossSvg />
+                </TouchableOpacity>
             </View>
             <View style={styles.body}>
                 <Text style={styles.text}>Retired foreigners can apply for a long-term visa.</Text>

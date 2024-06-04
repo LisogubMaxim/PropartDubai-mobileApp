@@ -23,7 +23,7 @@ import PowersOfAttorney from "./PowersOfAttorney/PowersOfAttorney";
 
 import styles from "./ourServicesStyles";
 
-const OurServices = () => {
+const OurServices = ({ onCloseModal }) => {
     const company = ["Freezone", "Mainland", "Comparison"];
     const visa = ["Golden visa", "Freelance visa", "Investor visa", "Retirement visa", "Employee Visa"];
 
@@ -70,11 +70,11 @@ const OurServices = () => {
     };
 
     return (
-        <>
+        <View style={styles.container}>
             <View style={styles.ourServices}>
                 <View style={styles.header}>
                     <Text style={styles.title}>Our services</Text>
-                    <TouchableOpacity style={styles.close}>
+                    <TouchableOpacity style={styles.close} onPress={onCloseModal}>
                         <CloseCrossSvg />
                     </TouchableOpacity>
                 </View>
@@ -143,7 +143,7 @@ const OurServices = () => {
             >
                 <ScrollView showsVerticalScrollIndicator={false}>{selectedService}</ScrollView>
             </RBSheet>
-        </>
+        </View>
     );
 };
 
