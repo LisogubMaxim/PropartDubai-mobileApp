@@ -15,15 +15,7 @@ import Registration from './src/components/Registration/Registration';
 import SignIn from './src/components/SignIn/SignInComponent/SignIn';
 import OTP from './src/components/OTP/OTP';
 import Main from './src/components/Main/Main';
-
-import DeveloperProperties from './src/components/Developers/DevProperties/DeveloperProperties';
-import ExploreDevelopers from './src/components/Developers/ExploreDevs/ExploreDevelopers';
-import Special from './src/components/Special/Special';
-import AboutDeveloper from './src/components/Developers/AboutDev/AboutDeveloper';
-import OurServices from './src/components/OurServices/OurServices';
-import AreaProperties from './src/components/areas/AreaProperties/AreaProperties';
 import ProjectProperty from './src/components/ProjectProperty/ProjectProperty';
-import MapComponent from './src/components/Map/MapComponent';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,15 +30,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {/* <AreaProperties /> */}
-      {/* <OurServices /> */}
-      {/* <AboutDeveloper /> */}
-      {/* <ExploreDevelopers /> */}
-      {/* <DeveloperProperties /> */}
-      {/* <Main /> */}
-      {/* <ProjectProperty /> */}
-      <MapComponent />
-      {/* <NavigationContainer>
+      <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
             name="SignIn"
@@ -74,7 +58,7 @@ export default function App() {
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
-      </NavigationContainer> */}
+      </NavigationContainer>
       <StatusBar style="auto" />
     </View>
   );
